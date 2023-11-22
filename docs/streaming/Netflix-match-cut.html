@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법 &#8212; PseudoLab Applied AI 스터디</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/streaming/Netflix-match-cut';</script>
+    <link rel="shortcut icon" href="../../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법" href="../platform/Uber-eta.html" />
+    <link rel="prev" title="다양한 산업에 AI 적용하는 사례집 [제목 수정]" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    다양한 산업에 AI 적용하는 사례집 [제목 수정]
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">스트리밍 산업</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">플랫폼 산업</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../platform/Uber-eta.html">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai/issues/new?title=Issue%20on%20page%20%2Fdocs/streaming/Netflix-match-cut.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/streaming/Netflix-match-cut.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Netflix 소개</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">회사 소개</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">비지니스 모델</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">풀고자 하는 문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">문제 해결을 위한 솔루션</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-segmentation">1. 숏 분할(Shot segmentation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-deduplication">2. 중복 제거(Shot deduplication)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-representations">3. 표현 계산(Compute representations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-pair-scores">4. 점수화(Compute pair scores)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-top-k-pairs">5. 순위 매기기(Extract top-K pairs)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">결과</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">개인 평가 의견</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="netflix">
+<h1>Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법<a class="headerlink" href="#netflix" title="Permalink to this heading">#</a></h1>
+<p><em>본 글은 <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>에 있는 내용을 참고하여 작성되었습니다.</em></p>
+<section id="id1">
+<h2>Netflix 소개<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="id2">
+<h3>회사 소개<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p>Netflix에 있는 콘텐츠들은 직접 소비하시거나 주변을 통해 많이 들어보셨겠지만, 아마 Netflix라는 회사의 여러 특징들에 대해서는 생소하신 분들이 계실 것 같습니다. 이번 섹션에서는 2022년 연간 실적 보고서를 기반으로 Netflix가 어떤 회사인지 살펴보도록 하겠습니다.</p>
+<p>Netflix는 인터넷 엔터테인먼트 서비스로, 2022년 말 기준으로 전 세계 190개국에서 2억 3천만 명 이상의 회원들에게 다양한 콘텐츠를 제공하고 있습니다. Netflix는 TV 프로그램, 영화, 다큐멘터리, 애니메이션 등 다양한 장르와 언어의 콘텐츠를 제작하고, 회원들에게 맞춤형으로 추천하고 있습니다.</p>
+<p>2022년 말 기준 Netflix에는 약 12,800명의 정직원(full-time)이 전 세계 65개국에서 근무 중입니다. 직원들의 지역별 비중은 아래와 같습니다.</p>
+<ul class="simple">
+<li><p>미국 캐나다 9,000명 (70%)</p></li>
+<li><p>EMEA 2,000명 (16%)</p></li>
+<li><p>Asia Pacific 1,400명 (11%)</p></li>
+<li><p>Latin America 400명 (3%)</p></li>
+</ul>
+<p>집계된 정직원 이 외에도 콘텐츠 제작에 관여하는 part-time 또는 temporary 직원도 있습니다.</p>
+</section>
+<section id="id3">
+<h3>비지니스 모델<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
+<p>Netflix의 수익원은 비교적 간단합니다. 주된 수익원은 스트리밍 서비스에 대한 월별 회원료 입니다. 그에 따라 전 세계를 기준으로 다양한 회원료 가격 정책을 보유하고 있다고 합니다. USD 기준으로 매월 USD 1에서 USD 26 사이의 금액의 여러 가격 정책을 보유하고 있습니다. 연간 실적 보고서에 따르면 2022년 말 기준으로 각 사용자당 매월 USD 11.76의 회원료를 평균적으로 지불 했다고 집계됐습니다. 보고서에 따르면 향후에 지속적으로 다른 가격 정책 및 변형된 가격 정책을 실험해볼 수 있다고 합니다.</p>
+</section>
+</section>
+<section id="id4">
+<h2>풀고자 하는 문제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>Netflix는 구독자 수를 증가시키거나 유지하지 못한다면은 비지니스 모델에 위험을 초래하게 됩니다. 구독자를 유입하고 지속적으로 유지시키기 위해서 Netflix에서는 매년 수 천개의 TV shows 및 영화를 런칭 한다고 합니다.[3] 각각의 콘텐츠들은 프로모션을 하기 위해 서로 다른 아트워크 및 티저, 트레일러 등의 비디오 자산을 만들게 됩니다. 그렇기 때문에 해당 자산들을 만드는 영상 편집자가 보다 더 효율적이고 효과적으로 작업할 수 있고, 궁극적으로 그분들의 생산성을 높여주기 위해 Netflix 내부 ML팀에서는 여러 혁신적인 편집 도구들을 만듭니다.</p>
+<p>영상 편집자가 영상 편집을 위해 상당한 시간을 쏟는 작업 중에 하나로 Match cut이 있습니다. Match cut은 두 개의 다른 숏을 이어서 보여주는 아주 강력한 스토리텔링 도구로, 예를 들어 하나의 숏(shot)에서 총알이 발사되는 순간을 다른 숏(shot)에서 폭발하는 순간과 연결하는 것과 같습니다.</p>
+<p>아래 예시는 <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>에서 공유된 Match cut 예시 중 하나입니다. (주의: <em>오징어 게임</em>에 대한 스포일러가 포함되어 있을 수 있습니다.)</p>
+<p><img alt="" src="https://miro.medium.com/v2/resize:fit:786/1*R41a3TMSE52i-p2XVC99Pg.gif" /></p>
+<ul class="simple">
+<li><p>Netflix 드라마 오징어 게임에서 나오는 Match Cut 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
+</ul>
+<p>위 예시 처럼 숏 중앙에 사람이 위치하고 있는 여러 유사한 숏들을 이어서 보여주는 것이 Match cut의 예시가 되겠습니다.</p>
+<p>Match cut은 영화나 TV 쇼에서 자주 사용되지만, 편집자가 비슷한 숏을 찾는 것은 수 일 또는 몇 주가 소요될 수 있습니다. 편집자는 긴 영화를 보고, 본인의 과거 기억을 바탕으로 유사한 숏을 찾는 과정을 거치기 때문입니다. 예를 들어 2000개의 숏이 있는 영화에서 match cut을 찾으려면 2000개의 숏을 두 개씩 조합해서 비교해야 하므로, 약 2백만 번의 비교가 필요합니다.</p>
+<div class="math notranslate nohighlight">
+\[^{2000}C_{2} = \frac{2000!}{2!(2000-2)!} = 1,999,000\]</div>
+</section>
+<section id="id5">
+<h2>문제 해결을 위한 솔루션<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<p>이러한 문제를 해결하기 위해 기계 학습 알고리즘을 사용해 크리에이터가 자동으로 Match cut을 찾을 수 있는 시스템을 Netflix에서 구축했습니다.</p>
+<p>해당 시스템은 숏 분할(Shot segmentation), 중복 제거(Shot deduplication), 표현 계산(Compute representations), 점수화(Compute pair scores), 그리고 순위 매기기(Extract top-K pairs)의 총 5단계로 구성됩니다.</p>
+<p><img alt="img" src="https://miro.medium.com/v2/resize:fit:770/1*CNc4VReDdmDlnpzHSmJA3Q.png" /></p>
+<ul class="simple">
+<li><p>Match cutting을 수행하는 시스템 다이어그램 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
+</ul>
+<p>위 시스템에는 하나의 영화나 한 에피소드를 나타내는 한 개의 비디오 파일이 입력(input)으로 들어가게 됩니다. 위 과정을 거쳐서 최종적으로 나오는 결과물(output)로는 K 개의 Match cut 쌍들이 나오게 됩니다. 각각의 단계에 대한 세부 내용은 아래에서 확인해보겠습니다.</p>
+<section id="shot-segmentation">
+<h3>1. 숏 분할(Shot segmentation)<a class="headerlink" href="#shot-segmentation" title="Permalink to this heading">#</a></h3>
+<p>가장 먼저 숏 분할 단계에서는 주어진 영상을 여러 개의 숏들로 나누는 단계입니다. 숏은 영상을 구성하는 단위 중에 하나 입니다. 카메라가 한 번 돌아가는 동안 찍힌 영상의 내용을 뜻하며, 숏들이 모여 하나의 씬(scene)이 완성되며, 씬들이 모여 하나의 시퀀스(sequence)가 완성되며, 이러한 시퀀스들이 모여 하나의 영화나 드라마의 에피소드가 만들어 집니다.</p>
+<p><img alt="" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*d8Zz4xdgNzOAJXNJbj63vw.png" /></p>
+<ul class="simple">
+<li><p>하나의 에피소드가 여러 개의 숏으로 분할되는 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
+</ul>
+<p>숏을 탐지하는 인공지능 모델은 이미 <a class="reference external" href="https://www.scenedetect.com/">PySceneDetect</a>와 같은 오픈소스 솔루션이 구축된 것이 있습니다. Netflix에서는 숏 분할을 위해 내부에서 만든 숏 분할 알고리즘을 사용했다고 하지만, PySceneDetect와 같은 오픈 소스를 사용해도 유사한 결과를 얻을 수 있다고 합니다.</p>
+</section>
+<section id="shot-deduplication">
+<h3>2. 중복 제거(Shot deduplication)<a class="headerlink" href="#shot-deduplication" title="Permalink to this heading">#</a></h3>
+<p>주어진 영상을 숏들로 분할하고 나니, 너무나도 많은 유사한 숏들이 존재했다고 합니다. 가령 서로 대화를 주고 받는 두 명의 인물을 서로 나눠가면서 비춰주는 씬이 있다면, 해당 씬에서 유사한 숏들이 아주 많이 생성이 되는 것이죠.</p>
+<p>그래서 유사한 숏들 끼리 그룹화를 시킨 후, 시간 순서상 가장 먼저 나온 숏을 남기고 나머지는 제거를 했다고 합니다.</p>
+<p>유사한 숏들 끼리 그룹화를 할 때에는 이미지를 벡터로 인코딩 시켜 유사도를 비교했다고 합니다.</p>
+</section>
+<section id="compute-representations">
+<h3>3. 표현 계산(Compute representations)<a class="headerlink" href="#compute-representations" title="Permalink to this heading">#</a></h3>
+<p>중복을 제거한 후에 남은 고유 이미지들에 대해서는 해당 이미지들에 대한 표현(representation)을 계산하게 됩니다. 이 과정은 사용자가 원하는 유형의 match cut을 찾기 위한 과정이라고 볼 수 있겠습니다.</p>
+<p>본 글에서는 두 가지 유형의 match cut을 안내하는데, 하나는 frame matching이고, 다른 하나는 action matching입니다.</p>
+<p>Frame matching은 숏에서 나오는 인물들의 구조가 일치하는 경우를 뜻합니다. 아래와 같은 두 숏을 연결하면 frame match cut이라고 볼 수 있습니다.</p>
+<p><img alt="" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*hWO2BXQG0Ei4phbsOZwEuA.png" />
+<img alt="" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*g4GnvGVXvxrs2w4CQ-E1uA.png" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.netflix.com/title/80057281">기묘한 이야기</a>에서 나오는 frame match 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
+</ul>
+<p>Action matching은 사물이나 사람이 연속적으로 이동하는 과정을 match cut으로 편집하여 사용하는 유형입니다. 아래와 같은 예시를 들 수 있겠습니다.</p>
+<p><img alt="" src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*FX3hu9Tm_sb9u6ozkW-YXg.gif" /></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.netflix.com/title/80996532">Resident Evil</a>에서 나오는 action match 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
+</ul>
+<p>이렇게 원하는 유형의 match cut을 찾기 위해서 이미지를 비교할 수 있도록 특졍 representation으로 변환하는 과정을 진행하게 됩니다.</p>
+</section>
+<section id="compute-pair-scores">
+<h3>4. 점수화(Compute pair scores)<a class="headerlink" href="#compute-pair-scores" title="Permalink to this heading">#</a></h3>
+<p>Representation으로 이미지를 변환하는 과정을 마무리하면, 모든 이미지 쌍들 간의 유사도 점수를 계산합니다. 유사도 점수가 높을 수로 두 개의 숏이 유사하고, 그에 따라 match cut으로 편집이 가능한 숏들이 되겠습니다.</p>
+</section>
+<section id="extract-top-k-pairs">
+<h3>5. 순위 매기기(Extract top-K pairs)<a class="headerlink" href="#extract-top-k-pairs" title="Permalink to this heading">#</a></h3>
+<p>본 과정은 앞서 네번째 단계에서 계산된 점수들을 순위화 하여, 상위 K개만 영상 편집자에게 반환되도록 하는 과정이 되겠습니다.</p>
+</section>
+</section>
+<section id="id6">
+<h2>결과<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>해당 시스템을 사용하여 어느 정도의 업무 효율을 가져 갔는지에 대한 언급은 없고, 해당 시스템이 얼마나 잘 match cut을 잘 탐지하는지에 대한 성능적인 평가가 마지막에 공유가 되었습니다. 관심 있으신 분께서는 블로그 <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">원문</a> 또는 <a class="reference external" href="https://arxiv.org/abs/2210.05766">학술 논문</a>을 참고 부탁드립니다.</p>
+</section>
+<section id="id7">
+<h2>개인 평가 의견<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
+<p>이번 활용 사례는 머신러닝을 사용하여 기존에 사람이 하던 수동적이고 노동 집약적인 작업을 자동화 하는 과정을 잘 설명한 사례라고 느꼈습니다.</p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Bing Copilot</p></li>
+<li><p><a class="reference external" href="https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx">Netflix Annual Reports &amp; Proxies</a></p></li>
+<li><p><a class="reference external" href="https://netflixtechblog.com/new-series-creating-media-with-machine-learning-5067ac110bcd">New Series: Creating Media with Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Match Cutting: Finding Cuts with Smooth Visual Transitions Using Machine Learning</a></p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\streaming"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">다양한 산업에 AI 적용하는 사례집 [제목 수정]</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../platform/Uber-eta.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Netflix 소개</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">회사 소개</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">비지니스 모델</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">풀고자 하는 문제</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">문제 해결을 위한 솔루션</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-segmentation">1. 숏 분할(Shot segmentation)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-deduplication">2. 중복 제거(Shot deduplication)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-representations">3. 표현 계산(Compute representations)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-pair-scores">4. 점수화(Compute pair scores)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-top-k-pairs">5. 순위 매기기(Extract top-K pairs)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">결과</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">개인 평가 의견</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
