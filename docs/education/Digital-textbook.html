@@ -1,0 +1,648 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?) &#8212; PseudoLab Applied AI 스터디</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-H5EKC658P6"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-H5EKC658P6');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/education/Digital-textbook';</script>
+    <link rel="shortcut icon" href="../../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법" href="../platform/Uber-eta.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    다양한 산업에 AI 적용하는 사례집 [제목 수정]
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">스트리밍 산업</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../streaming/Netflix-match-cut.html">Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">플랫폼 산업</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../platform/Uber-eta.html">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">교육 산업</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai/issues/new?title=Issue%20on%20page%20%2Fdocs/education/Digital-textbook.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/education/Digital-textbook.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">개요</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">교육청의 AI 교과서 사업이란?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">AI 교과서 도입과정</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">AI를 활용한 에듀테크 현황</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ebs-danchoo">교과과정 : EBS 단추(DANCHOO)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dreamwriting">비교과 과정 : 드림라이팅(DreamWriting)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">결론</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ai-feat-ai">
+<h1>AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)<a class="headerlink" href="#ai-feat-ai" title="Permalink to this heading">#</a></h1>
+<section id="id1">
+<h2>개요<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>ChatGPT 열풍이 불면서, 교육에 있어서도 AI를 활용하여 교사와 학생에게 맞춤형 교육을 제공해줄 수 있습니다.</p>
+<p>2025년까지 주요교과에 대해 공급할 예정이며, 2028년까지 후속으로 제공할 예정입니다.</p>
+</section>
+<section id="ai">
+<h2>교육청의 AI 교과서 사업이란?<a class="headerlink" href="#ai" title="Permalink to this heading">#</a></h2>
+<p>[이주호 / 교육부 장관]</p>
+<p>“학생은 맞춤 교육으로 학습에서 성공을 경험하고 교사는 데이터 기반으로 수업을 디자인하고 개별 학생의 인간적 성장을 이끄는 역할에 더 집중할 수 있습니다.”</p>
+<p><img alt="" src="../../_images/img1.png" /></p>
+<ul class="simple">
+<li><p>디지털교과서와 AI 교과서의 차이점</p></li>
+</ul>
+<p>현재 보급된 디지털 교과서는 <strong>전통적인 서책형 교과서를 디지털 형태로 제공하는 방식</strong>이었습니다.</p>
+<p>반면에 <strong>AI 디지털 교과서는 인공지능 기술을 활용하여 학습자 개개인의 특성과 학습 상황을 파악하고, 맞춤형 교육을 제공하는 것이 가장 큰 특징</strong>입니다.</p>
+<p><img alt="" src="../../_images/img2.png" /></p>
+<ul class="simple">
+<li><p>AI 교과서와 기존 디지털 교과서의 차이점</p></li>
+</ul>
+<p>AI 교과서는 기존 디지털 교과서에 비해 <strong>실감형 콘텐츠, 개별 맞춤학습, 자기주도학습, 진로·진학 지도, 지능형 학습분석</strong> 등의 측면에서 다양한 장점을 가지고 있습니다. 이러한 장점으로 인해 AI 교과서는 교육의 패러다임을 변화시킬 수 있는 잠재력을 가지고 있습니다.</p>
+<p><strong>① 기존 디지털 교과서</strong></p>
+<ul class="simple">
+<li><p><strong>텍스트와 이미지 중심의 콘텐츠</strong>를 제공합니다. 기존 디지털 교과서는 종이 교과서를 디지털화한 것으로, 텍스트와 이미지 중심의 콘텐츠를 제공합니다.</p></li>
+<li><p><strong>제한된 상호작용</strong>을 지원합니다. 기존 디지털 교과서는 학생과 교과서 간의 상호작용이 제한적입니다.</p></li>
+<li><p><strong>개별 맞춤학습</strong>을 지원하지 않습니다. 기존 디지털 교과서는 모든 학생에게 동일한 학습 콘텐츠와 피드백을 제공합니다.</p></li>
+<li><p><strong>자기주도학습</strong>을 지원하지 않습니다. 기존 디지털 교과서는 교사의 지시에 따라 학습해야 하는 경우가 많습니다.</p></li>
+<li><p><strong>진로·진학 지도</strong>를 지원하지 않습니다. 기존 디지털 교과서는 진로·진학에 필요한 정보를 제공하지 않습니다.</p></li>
+</ul>
+<p><strong>② AI 디지털 교과서</strong></p>
+<ul class="simple">
+<li><p><strong>실감형 콘텐츠</strong>를 제공합니다. AI 교과서는 증강 현실(AR), 가상 현실(VR) 등 다양한 실감형 콘텐츠를 활용하여 학습자의 몰입도를 높이고 학습 효과를 높일 수 있습니다.</p></li>
+<li><p><strong>개별 맞춤학습</strong>을 지원합니다. AI 교과서는 학생의 학습 성취도, 학습 스타일, 학습 흥미 등을 분석하여 맞춤형 학습 콘텐츠와 피드백을 제공합니다.</p></li>
+<li><p><strong>자기주도학습</strong>을 지원합니다. AI 교과서는 학생이 스스로 학습할 수 있도록 다양한 학습 도구와 학습 리소스를 제공합니다.</p></li>
+<li><p><strong>진로·진학 지도</strong>를 지원합니다. AI 교과서는 학생의 진로·진학에 필요한 정보를 제공하고, 학생의 진로·진학 계획을 수립하는 데 도움을 줍니다.</p></li>
+<li><p><strong>지능형 학습분석</strong>을 제공합니다. AI 교과서는 학생의 학습 데이터를 분석하여 학습자의 학습 패턴을 파악하고, 학습자의 학습 효율성을 높이기 위한 방법을 제시합니다.</p></li>
+</ul>
+<p>그렇다면 AI 교과서는 어떤 형태로 제공이 될까?</p>
+<p>이에 대해서 AI 코스웨어라는 신조어를 통해 제공되곤합니다.</p>
+<blockquote>
+<div><p>AI코스웨어(courseware, course + software)</p>
+</div></blockquote>
+<p>AI 코스웨어는 ‘문제 풀이 기반’과 ‘질문 기반’의 두 가지 유형으로 분류됩니다.</p>
+<p><strong>① 문제 풀이 기반 AI 코스웨어:</strong> 이는 학생들의 학습 성취도를 평가하고 각 학생의 수준에 맞는 맞춤형 문제와 해답을 제공하는 AI 기반 방법입니다.</p>
+<p>예를 들어, 수학의 각 단원별 개념 학습이나 정보 수업의 프로그래밍 과제 등의 실습에 활용할 수 있습니다.</p>
+<p>대표적인 서비스로서 스피킹클래스, AI펭톡, 듀오링고, 매쓰플랫, 클래스팅, 아이스크림에듀, Khan Academy 등이 있습니다.</p>
+<p><strong>② 질문 기반 AI 코스웨어:</strong> 이는 AI가 학생의 질문을 바탕으로 각 학생의 상황에 맞는 맞춤형 콘텐츠와 해답을 제공하는 방법입니다.</p>
+<p>질문 기반 AI 코스웨어의 대표적인 예로는 클라썸이 있습니다.</p>
+<p>질문 기반 AI 교육 콘텐츠는 학생 참여를 높이고 자기 주도 학습을 지원하는 데 효과적입니다.</p>
+<p>예를 들어, 수학 수업 후에 생긴 질문을 학생이 남기면 AI는 조교 선생님처럼 즉시 답변을 제공합니다.</p>
+<p>AI를 통해 학생들은 <strong>학습의 병목 현상 없이 즉시 다음 단계로 나아갈 수 있으며</strong>, AI가 추천하는 맞춤형 콘텐츠를 통해 심층적으로 학습할 수 있습니다.</p>
+<p>어떤 유형의 AI 교육 콘텐츠를 사용할지는 교육 목표와 맥락에 따라 달라집니다. 향후 개인의 상황에 맞는 AI 교육 콘텐츠를 선택하고 적절히 활용하는 것이 더욱 중요해질 것입니다.</p>
+</section>
+<section id="id2">
+<h2>AI 교과서 도입과정<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>교육부는 2025년 수학과 영어, 정보, 특수교육 국어 과목에 먼저 도입하고 2028년까지 예체능과 도덕을 제외한 전과목으로 확대할 예정입니다.</p>
+<p>개발 또한 교과서 개발 경험이 있는 발행사와 신기술을 보유한 에듀테크 기업이 협업해 진행합니다.</p>
+<p>개발된 AI 디지털교과서가 검정 심사에 합격하더라도 6개월 동안 신뢰성과 적합성을 검토해 현장에 보급할 계획입니다.</p>
+<p>아울러 교육부는 AI 디지털교과서 활용을 위해서는 교사의 역량이 중요하다며 수업 역량 개발 지원에 나선다고 밝혔습니다.</p>
+<p>2025년 먼저 도입되는 수학, 영어, 정보 등 담당 교사부터 방학 기간을 활용한 연수가 이뤄집니다.</p>
+</section>
+<section id="id3">
+<h2>AI를 활용한 에듀테크 현황<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<section id="ebs-danchoo">
+<h3>교과과정 : EBS 단추(DANCHOO)<a class="headerlink" href="#ebs-danchoo" title="Permalink to this heading">#</a></h3>
+<p>EBS 단추는 EBS가 개발한 AI 기반 학습 솔루션으로, 학생의 학습 성취도를 향상시키고 자기주도 학습을 지원하는 것을 목표로 합니다.</p>
+<ol class="arabic simple">
+<li><p><strong>개별 맞춤학습</strong></p></li>
+</ol>
+<p>EBS 단추는 학생의 학습 성취도, 학습 스타일, 학습 흥미 등을 분석하여 맞춤형 학습 콘텐츠와 피드백을 제공합니다. 이를 통해 학생이 자신의 수준에 맞는 학습을 할 수 있도록 지원합니다.</p>
+<p><img alt="" src="../../_images/img3.png" /></p>
+<p>위와 같이 초등학생부터 고등학생까지 수준별 문제를 제공하고 있습니다.</p>
+<ol class="arabic simple" start="2">
+<li><p><strong>자기주도 학습</strong></p></li>
+</ol>
+<p>EBS 단추는 학생이 스스로 학습할 수 있도록 다양한 학습 도구와 학습 리소스를 제공합니다. 이를 통해 학생이 자신의 학습 목표를 설정하고, 학습 계획을 수립하고, 학습 결과를 평가할 수 있도록 지원합니다.</p>
+<p><img alt="" src="../../_images/img4.png" />
+<img alt="" src="../../_images/img5.png" /></p>
+<p>위와 같이 과목별로 추천문제를 선택하여 학습하며 자신만의 로드맵을 만들어갈 수 있습니다.</p>
+<ol class="arabic simple" start="3">
+<li><p><strong>지능형 학습분석</strong></p></li>
+</ol>
+<p>EBS 단추는 학생의 학습 데이터를 분석하여 학습자의 학습 패턴을 파악하고, 학습자의 학습 효율성을 높이기 위한 방법을 제시합니다. 이를 통해 학생이 효과적으로 학습할 수 있도록 지원합니다.</p>
+<p><img alt="" src="../../_images/img6.png" />
+<img alt="" src="../../_images/img7.png" /></p>
+<p>위처럼 단추가 나의 학습현황에 맞게 문제를 추천해주고, 학습현황을 시각화해주기도 합니다.</p>
+<p><strong>EBS 단추는 이러한 특징을 통해 학생의 학습 성취도를 향상시키고, 자기주도 학습을 지원하며, 학생의 진로·진학을 돕는 데 기여할 것으로 기대됩니다.</strong></p>
+</section>
+<section id="dreamwriting">
+<h3>비교과 과정 : 드림라이팅(DreamWriting)<a class="headerlink" href="#dreamwriting" title="Permalink to this heading">#</a></h3>
+<p><img alt="" src="../../_images/img8.png" /></p>
+<ol class="arabic simple">
+<li><p><strong>창의적 사고 강화</strong>: AI 디지털 교과서에서 제공하는 개인화된 학습 콘텐츠와 드림라이팅 기능을 통해 학생들은 특정 주제에 대해 AI와 상호작용하면서 다양한 관점에서 생각하고, 창의적인 문장을 생성할 수 있습니다.</p></li>
+<li><p><strong>비판적 사고 개발</strong>: 학생들은 AI가 제공한 문장을 자신의 언어로 재구성하면서 깊이 있는 사고를 하고, 비판적으로 판단하는 능력을 향상시킬 수 있습니다. 이는 AI 디지털 교과서에서의 맞춤형 학습 경험과 연계되어 학습 효과를 극대화합니다.</p></li>
+<li><p><strong>학습 성과의 기록 및 관리</strong>: AI와 함께 작성한 글을 이야기 책으로 저장하는 기능은 학생들이 자신의 학습 과정과 성과를 기록하고 관리할 수 있게 해줍니다. 이는 AI 디지털 교과서의 데이터 분석 및 관리 기능과 통합되어 학습자의 성장을 체계적으로 지원합니다.</p></li>
+</ol>
+</section>
+</section>
+<section id="id4">
+<h2>결론<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>AI 디지털 교과서, 단원 추천 기능</strong></p>
+<ul class="simple">
+<li><p>단원별 학습 내용을 분석하여 학생의 학습 수준에 맞는 학습 콘텐츠를 추천</p></li>
+<li><p>추천 콘텐츠는 학생의 학습 성취도를 향상시키는 데 효과적</p></li>
+<li><p>단원이 정해져있어야 추천이 가능하며, 장기적인 학습 계획을 세우는 데 도움</p></li>
+</ul>
+</li>
+<li><p><strong>풀이과정인식 AI, 교과서에도 적용될 가능성이 높다.</strong></p>
+<ul class="simple">
+<li><p>학생의 풀이 과정 분석하여 개별 이해도 파악, 맞춤형 피드백 제공</p></li>
+<li><p>학생의 오류 파악, 학습 성취도 평가에 도움</p></li>
+<li><p>고성능 장비 보급, 데이터 확보 선결 과제 (ai hub 데이터 참고)</p></li>
+</ul>
+</li>
+<li><p><strong>AI 디지털 교과서 , 비교과 및 글쓰기 평가에 유용</strong></p>
+<ul class="simple">
+<li><p>비교과 활동이나 글쓰기의 주제, 내용, 구성 등을 분석하여 학생의 역량을 평가</p></li>
+<li><p>객관적이고 정확한 평가가 가능하며, 학생의 역량을 보다 면밀하게 파악할 수 있음</p></li>
+<li><p>추후 데이터가 확보된다면, 교과 평가에도 적용 가능할 것으로 전망</p></li>
+</ul>
+</li>
+</ol>
+<p>위 3가지 특징을 통해 살펴볼 수 있듯이, 앞으로 데이터가 확보될수록 AI 디지털 교과서는 단원별 문제 추천뿐 아니라, 교과 과정에도 적용 가능해질 것입니다. 나아가 풀이과정 인식이 가능해지면 수행평가까지도 영향력을 넓힐 수 있을 것으로 전망되고 있습니다.</p>
+<p>점점 발전하는 AI 기술력을 힘입어 AI 디지털 교과서는 학생 개개인의 학업에 있어서 학원이나 과외에 영향력을 줄어들게하며, 모두에게 상향평준화된 교육의 기회를 제공할 것입니다. <strong>즉, “AI 디지털 교과서는 학습에 도움이 된다”의 방향으로 나아갈 것입니다.</strong></p>
+</section>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>AI 교과서 도입 : <a class="reference external" href="https://www.ktv.go.kr/content/view?content_id=678489">https://www.ktv.go.kr/content/view?content_id=678489</a></p></li>
+<li><p>AI 디지털 교과서란? : <a class="reference external" href="https://medium.com/classum/ai-%EB%94%94%EC%A7%80%ED%84%B8-%EA%B5%90%EA%B3%BC%EC%84%9C%EB%9E%80-27cf56b7c523">https://medium.com/classum/ai-디지털-교과서란-27cf56b7c523</a></p></li>
+<li><p>ICT 용어, AI 디지털 교과서 : <a class="reference external" href="https://www.etnews.com/20230718000114">https://www.etnews.com/20230718000114</a></p></li>
+<li><p>서울 지역 중학생들의 국어, 수학 교과용 감성 AI 튜터 데이터 : <a class="reference external" href="https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&amp;topMenu=100&amp;aihubDataSe=realm&amp;dataSetSn=71518">https://aihub.or.kr/aihubdata/data/view.do?currMenu=115&amp;topMenu=100&amp;aihubDataSe=realm&amp;dataSetSn=71518</a></p></li>
+<li><p>AI 튜터 서비스 현황 및 추진과제 : <a class="reference external" href="http://kocw-n.xcache.kinxcdn.com/data/keris/2022/keris0114/147.pdf">http://kocw-n.xcache.kinxcdn.com/data/keris/2022/keris0114/147.pdf</a></p></li>
+<li><p>EBS AI : <a class="reference external" href="https://ai.ebs.co.kr/">https://ai.ebs.co.kr/</a></p></li>
+<li><p>아이스크림 홈런, 초등용 글쓰기 튜터_드림라이팅  : <a class="reference external" href="https://www.home-learn.co.kr/homelearn/system/Intro-Aitutor.html#e3">https://www.home-learn.co.kr/homelearn/system/Intro-Aitutor.html#e3</a></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\education"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../platform/Uber-eta.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">개요</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai">교육청의 AI 교과서 사업이란?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">AI 교과서 도입과정</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">AI를 활용한 에듀테크 현황</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ebs-danchoo">교과과정 : EBS 단추(DANCHOO)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dreamwriting">비교과 과정 : 드림라이팅(DreamWriting)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">결론</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
