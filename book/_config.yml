@@ -38,6 +38,7 @@ html:
   favicon: 'PseudoLab_logo.png'
   use_issues_button: true
   use_repository_button: true
+  google_analytics_id: G-H5EKC658P6
   
 sphinx:
   config:

@@ -7,3 +7,6 @@ parts:
     - caption: 플랫폼 산업
       chapters:
       - file: docs/platform/Uber-eta
+    - caption: 교육 산업
+      chapters:
+      - file: docs/education/Digital-textbook
