@@ -1,6 +1,6 @@
 # Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법
 
-*본 글은 [Netflix 블로그](https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59)에 있는 내용을 참고하여 작성되었습니다.*
+*본 글은 [Netflix 블로그](https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59)에 있는 내용을 기반하여 작성되었습니다.*
 
 ## Netflix 소개
 
@@ -100,7 +100,7 @@ Representation으로 이미지를 변환하는 과정을 마무리하면, 모든
 이번 활용 사례는 머신러닝을 사용하여 기존에 사람이 하던 수동적이고 노동 집약적인 작업을 자동화 하는 과정을 잘 설명한 사례라고 느꼈습니다. 
 
 ## Reference
-1. Bing Copilot
+1. Microsoft Copilot
 2. [Netflix Annual Reports & Proxies](https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx)
 3. [New Series: Creating Media with Machine Learning](https://netflixtechblog.com/new-series-creating-media-with-machine-learning-5067ac110bcd)
 4. [Match Cutting: Finding Cuts with Smooth Visual Transitions Using Machine Learning](https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59)

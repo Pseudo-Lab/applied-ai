@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법 &#8212; PseudoLab Applied AI 스터디</title>
+    <title>Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까? &#8212; PseudoLab Applied AI 스터디</title>
   
   
   
@@ -69,14 +69,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/streaming/Netflix-match-cut';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/streaming/Spotify-semantic-search';</script>
     <link rel="shortcut icon" href="../../_static/PseudoLab_logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까?" href="Spotify-semantic-search.html" />
-    <link rel="prev" title="AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)" href="../education/Digital-textbook.html" />
+    <link rel="next" title="Amazon Prime Video에서는 ‘건너뛰기’ 버튼을 삽입할 적절한 위치를 어떻게 찾는걸까?" href="AmazonPrimeVideo-skip-intro.html" />
+    <link rel="prev" title="Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법" href="Netflix-match-cut.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,8 +171,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">스트리밍 산업</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Spotify-semantic-search.html">Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Netflix-match-cut.html">Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="AmazonPrimeVideo-skip-intro.html">Amazon Prime Video에서는 ‘건너뛰기’ 버튼을 삽입할 적절한 위치를 어떻게 찾는걸까?</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">플랫폼 산업</span></p>
@@ -251,7 +249,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Pseudo-Lab/applied-ai/issues/new?title=Issue%20on%20page%20%2Fdocs/streaming/Netflix-match-cut.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai/issues/new?title=Issue%20on%20page%20%2Fdocs/streaming/Spotify-semantic-search.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -281,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/streaming/Netflix-match-cut.md" target="_blank"
+      <li><a href="../../_sources/docs/streaming/Spotify-semantic-search.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -363,7 +361,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</h1>
+    <h1>Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까?</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -373,22 +371,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Netflix 소개</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Spotify 소개</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">회사 소개</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">비지니스 모델</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">풀고자 하는 문제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">문제 해결을 위한 솔루션</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-segmentation">1. 숏 분할(Shot segmentation)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-deduplication">2. 중복 제거(Shot deduplication)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-representations">3. 표현 계산(Compute representations)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-pair-scores">4. 점수화(Compute pair scores)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-top-k-pairs">5. 순위 매기기(Extract top-K pairs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained">1. 프로젝트 시나리오에 적합한 임베딩용 pre-trained 모델 선택하기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">2. fine-tuning용 데이터 준비</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3. 학습</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4. 평가</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5. 프로덕션 환경에 통합</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">결과</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">개인 평가 의견</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">결과</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">개인 평가 의견</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
             </nav>
@@ -401,108 +399,86 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="netflix">
-<h1>Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법<a class="headerlink" href="#netflix" title="Permalink to this heading">#</a></h1>
-<p><em>본 글은 <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>에 있는 내용을 기반하여 작성되었습니다.</em></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="spotify">
+<h1>Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까?<a class="headerlink" href="#spotify" title="Permalink to this heading">#</a></h1>
+<p><em>본 글은 <a class="reference external" href="https://engineering.atspotify.com/2022/03/introducing-natural-language-search-for-podcast-episodes/">Spotify 블로그</a>에 있는 내용을 기반하여 작성되었습니다.</em></p>
 <section id="id1">
-<h2>Netflix 소개<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Spotify 소개<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <section id="id2">
 <h3>회사 소개<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
-<p>Netflix에 있는 콘텐츠들은 직접 소비하시거나 주변을 통해 많이 들어보셨겠지만, 아마 Netflix라는 회사의 여러 특징들에 대해서는 생소하신 분들이 계실 것 같습니다. 이번 섹션에서는 2022년 연간 실적 보고서를 기반으로 Netflix가 어떤 회사인지 살펴보도록 하겠습니다.</p>
-<p>Netflix는 인터넷 엔터테인먼트 서비스로, 2022년 말 기준으로 전 세계 190개국에서 2억 3천만 명 이상의 회원들에게 다양한 콘텐츠를 제공하고 있습니다. Netflix는 TV 프로그램, 영화, 다큐멘터리, 애니메이션 등 다양한 장르와 언어의 콘텐츠를 제작하고, 회원들에게 맞춤형으로 추천하고 있습니다.</p>
-<p>2022년 말 기준 Netflix에는 약 12,800명의 정직원(full-time)이 전 세계 65개국에서 근무 중입니다. 직원들의 지역별 비중은 아래와 같습니다.</p>
-<ul class="simple">
-<li><p>미국 캐나다 9,000명 (70%)</p></li>
-<li><p>EMEA 2,000명 (16%)</p></li>
-<li><p>Asia Pacific 1,400명 (11%)</p></li>
-<li><p>Latin America 400명 (3%)</p></li>
-</ul>
-<p>집계된 정직원 이 외에도 콘텐츠 제작에 관여하는 part-time 또는 temporary 직원도 있습니다.</p>
+<p>Spotify는 2006년 스웨덴에서 설립된 음악 스트리밍 서비스 회사입니다. Spotify는 사용자들에게 인터넷을 통해 수백만 곡의 음악과 팟캐스트, 오디오북 등의 콘텐츠를 제공하고 있습니다. 2022년 기준으로 1억개 이상의 음악과 5백만개의 팟캐스트, 그리고 30만개 이상의 오디오북이 Spotify에서 제공되고 있습니다. 그리고 Spotify는 이러한 콘텐츠들의 저작권자들에게 로열티를 지급하고 있습니다.</p>
+<p>Spotify의 미션은 인간이 창의력이라는 잠재력을 발휘하기 위해 백만여명의 창작자들에게 그들의 예술로 살 수 있는 기회를 주고, 수십 억 명의 팬들에게 그들의 예술을 즐기고 영감을 받을 수 있는 기회를 주는 것입니다. 그에 따라 Spotify는 출시된 이후 음악 감상 방식을 완전히 바꾸었으며, 모든 사람들이 음악과 오디오 콘텐츠를 쉽게 접할 수 있도록 기존에 오디오 콘텐츠를 구매하고 소유하는 전통적인 거래 방식에서 스트리밍을 통해 필요할 때마다 접근하는 접근 방식의 산업으로 바꾸는데 이바지 했다고 볼 수 있습니다.</p>
+<p>Spotify는 사용자들의 취향과 관심에 맞는 콘텐츠를 추천하고 재생하는 기술을 개발하고 있고 또한 콘텐츠 제작자들에게 플랫폼을 제공하여 그들의 작품을 전 세계에 알릴 수 있도록 지원하고 있습니다.</p>
 </section>
 <section id="id3">
 <h3>비지니스 모델<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
-<p>Netflix의 수익원은 비교적 간단합니다. 주된 수익원은 스트리밍 서비스에 대한 월별 회원료 입니다. 그에 따라 전 세계를 기준으로 다양한 회원료 가격 정책을 보유하고 있다고 합니다. USD 기준으로 매월 USD 1에서 USD 26 사이의 금액의 여러 가격 정책을 보유하고 있습니다. 연간 실적 보고서에 따르면 2022년 말 기준으로 각 사용자당 매월 USD 11.76의 회원료를 평균적으로 지불 했다고 집계됐습니다. 보고서에 따르면 향후에 지속적으로 다른 가격 정책 및 변형된 가격 정책을 실험해볼 수 있다고 합니다.</p>
+<p>Spotify는 두 가지 비지니스 모델을 운영하고 있습니다. 하나는 광고가 삽입되는 무료 서비스(Ad-Supported Service)이고, 다른 하나는 월정액을 내면 광고 없이 콘텐츠를 즐길 수 있는 프리미엄(Premium) 서비스입니다.</p>
 </section>
 </section>
 <section id="id4">
 <h2>풀고자 하는 문제<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<p>Netflix는 구독자 수를 증가시키거나 유지하지 못한다면은 비지니스 모델에 위험을 초래하게 됩니다. 구독자를 유입하고 지속적으로 유지시키기 위해서 Netflix에서는 매년 수 천개의 TV shows 및 영화를 런칭 한다고 합니다.[3] 각각의 콘텐츠들은 프로모션을 하기 위해 서로 다른 아트워크 및 티저, 트레일러 등의 비디오 자산을 만들게 됩니다. 그렇기 때문에 해당 자산들을 만드는 영상 편집자가 보다 더 효율적이고 효과적으로 작업할 수 있고, 궁극적으로 그분들의 생산성을 높여주기 위해 Netflix 내부 ML팀에서는 여러 혁신적인 편집 도구들을 만듭니다.</p>
-<p>영상 편집자가 영상 편집을 위해 상당한 시간을 쏟는 작업 중에 하나로 Match cut이 있습니다. Match cut은 두 개의 다른 숏을 이어서 보여주는 아주 강력한 스토리텔링 도구로, 예를 들어 하나의 숏(shot)에서 총알이 발사되는 순간을 다른 숏(shot)에서 폭발하는 순간과 연결하는 것과 같습니다.</p>
-<p>아래 예시는 <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>에서 공유된 Match cut 예시 중 하나입니다. (주의: <em>오징어 게임</em>에 대한 스포일러가 포함되어 있을 수 있습니다.)</p>
-<p><img alt="" src="https://miro.medium.com/v2/resize:fit:786/1*R41a3TMSE52i-p2XVC99Pg.gif" /></p>
-<ul class="simple">
-<li><p>Netflix 드라마 오징어 게임에서 나오는 Match Cut 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
-</ul>
-<p>위 예시 처럼 숏 중앙에 사람이 위치하고 있는 여러 유사한 숏들을 이어서 보여주는 것이 Match cut의 예시가 되겠습니다.</p>
-<p>Match cut은 영화나 TV 쇼에서 자주 사용되지만, 편집자가 비슷한 숏을 찾는 것은 수 일 또는 몇 주가 소요될 수 있습니다. 편집자는 긴 영화를 보고, 본인의 과거 기억을 바탕으로 유사한 숏을 찾는 과정을 거치기 때문입니다. 예를 들어 2000개의 숏이 있는 영화에서 match cut을 찾으려면 2000개의 숏을 두 개씩 조합해서 비교해야 하므로, 약 2백만 번의 비교가 필요합니다.</p>
-<div class="math notranslate nohighlight">
-\[^{2000}C_{2} = \frac{2000!}{2!(2000-2)!} = 1,999,000\]</div>
+<p>Spotify에서는 2022년 3월 까지만 하더라도 앱 내의 각종 컨텐츠를 탐색할 수 있는 검색 엔진을 주로 term matching 알고리즘에 기반하여 운영을 했다고 합니다. 예를 들어 “electric cars climate impact” 라는 쿼리를 입력하면, 검색 엔진이 참고할 수 있는 인덱싱된 컨텐츠의 메타데이터를 보고, 쿼리에 있던 단어들이 모두 메타데이터에 존재한다면 검색 결과로 반환이 되는 것입니다.</p>
+<p>하지만 사용자는 원하는 콘텐츠를 찾기 위해 해당 콘텐츠에서 언급되는 정확한 단어를 인지하지 못한 상태에서 검색을 하는 경우도 많고, 이런 경우에 term matching에 기반한 검색 엔진은 사용자가 원하는 결과물이 데이터베이스에 존재하더라도 검색 결과로 반환하지 못할 수 있습니다.</p>
 </section>
 <section id="id5">
 <h2>문제 해결을 위한 솔루션<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<p>이러한 문제를 해결하기 위해 기계 학습 알고리즘을 사용해 크리에이터가 자동으로 Match cut을 찾을 수 있는 시스템을 Netflix에서 구축했습니다.</p>
-<p>해당 시스템은 숏 분할(Shot segmentation), 중복 제거(Shot deduplication), 표현 계산(Compute representations), 점수화(Compute pair scores), 그리고 순위 매기기(Extract top-K pairs)의 총 5단계로 구성됩니다.</p>
-<p><img alt="img" src="https://miro.medium.com/v2/resize:fit:770/1*CNc4VReDdmDlnpzHSmJA3Q.png" /></p>
-<ul class="simple">
-<li><p>Match cutting을 수행하는 시스템 다이어그램 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
-</ul>
-<p>위 시스템에는 하나의 영화나 한 에피소드를 나타내는 한 개의 비디오 파일이 입력(input)으로 들어가게 됩니다. 위 과정을 거쳐서 최종적으로 나오는 결과물(output)로는 K 개의 Match cut 쌍들이 나오게 됩니다. 각각의 단계에 대한 세부 내용은 아래에서 확인해보겠습니다.</p>
-<section id="shot-segmentation">
-<h3>1. 숏 분할(Shot segmentation)<a class="headerlink" href="#shot-segmentation" title="Permalink to this heading">#</a></h3>
-<p>가장 먼저 숏 분할 단계에서는 주어진 영상을 여러 개의 숏들로 나누는 단계입니다. 숏은 영상을 구성하는 단위 중에 하나 입니다. 카메라가 한 번 돌아가는 동안 찍힌 영상의 내용을 뜻하며, 숏들이 모여 하나의 씬(scene)이 완성되며, 씬들이 모여 하나의 시퀀스(sequence)가 완성되며, 이러한 시퀀스들이 모여 하나의 영화나 드라마의 에피소드가 만들어 집니다.</p>
-<p><img alt="" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*d8Zz4xdgNzOAJXNJbj63vw.png" /></p>
-<ul class="simple">
-<li><p>하나의 에피소드가 여러 개의 숏으로 분할되는 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
-</ul>
-<p>숏을 탐지하는 인공지능 모델은 이미 <a class="reference external" href="https://www.scenedetect.com/">PySceneDetect</a>와 같은 오픈소스 솔루션이 구축된 것이 있습니다. Netflix에서는 숏 분할을 위해 내부에서 만든 숏 분할 알고리즘을 사용했다고 하지만, PySceneDetect와 같은 오픈 소스를 사용해도 유사한 결과를 얻을 수 있다고 합니다.</p>
+<p>이러한 문제를 해결하기 위해 Spotify에서는 Natural Language Search (NLS) 기법을 도입했습니다. 연구 분야에서는 Semantic Search라고 알려진 기법입니다. NLS을 사용한 검색엔진은 쿼리한 단어의 정확한 일치가 아니라 의미론적으로 연관된 콘텐츠를 쿼리와 매칭하여 결과를 반환합니다.</p>
+<p>글 후반부에 나올 예정이지만, NLS가 기존 term matching을 완전 대체 한것이 아니라, term matching의 결과물과 NLS 결과물을 reranking을 해서 최종적인 결과물을 사용자에게 반환하도록 프로덕션 환경에서 구현을 해두고 있습니다.</p>
+<section id="pre-trained">
+<h3>1. 프로젝트 시나리오에 적합한 임베딩용 pre-trained 모델 선택하기<a class="headerlink" href="#pre-trained" title="Permalink to this heading">#</a></h3>
+<p>Natural Language Search를 구현하기 위해서는 Dense Retrieval이라는 머신러닝 기술을 사용해야 합니다. Dense Retrieval은 입력된 쿼리와 반환되어야 하는 팟캐스트의 에피소드를 공통된 임베딩 공간 (shared embedding space)에 투영시켜서 벡터화를 하는 기법입니다. 그리고 나서 쿼리 벡터와 에피소드 벡터간의 거리가 가까울수로 의미론적으로 같다고 판단하여 결과를 반환하게 됩니다.</p>
+<p>즉, 본 솔루션 구축에 가장 먼저 선행 되어야 하는 것은 Spotify가 지닌 팟캐스트 데이터와 앞으로 입력될 수 있는 쿼리들에 대해 적합한 벡터를 생성해줄 수 있는 언어 모델을 선택하는 것이였습니다.</p>
+<p>Spotify에서는 최종적으로 <a class="reference external" href="https://arxiv.org/pdf/2012.14388.pdf">Universal Sentence Encoder CMLM</a> 모델을 사용했습니다. 왜냐하면 팟캐스트 에피소드 벡터는 에피소드의 제목과 에피소드의 설명 글을 합쳐서, 여러 문장들을 기반으로 벡터가 생성되는데, 보다 퀄리티 좋은 벡터를 생성하기 위해서 문장 임베딩 (sentence embedding)을 잘하는 모델이 필요했습니다.</p>
+<p>Universal Sentence Encoder CMLM 모델을 사용한 또 다른 이유는 해당 모델이 100개 언어 이상의 방대한 데이터를 기반으로 pre-trained된 모델이였기 때문입니다. Spotify는 여러 언어로 제작된 팟캐스트를 보유하고 있다보니 여러 언어에 대해 품질 좋은 임베딩을 만들고 또 확장성을 위해 이러한 다국어 모델을 사용했다고 볼 수 있겠습니다.</p>
 </section>
-<section id="shot-deduplication">
-<h3>2. 중복 제거(Shot deduplication)<a class="headerlink" href="#shot-deduplication" title="Permalink to this heading">#</a></h3>
-<p>주어진 영상을 숏들로 분할하고 나니, 너무나도 많은 유사한 숏들이 존재했다고 합니다. 가령 서로 대화를 주고 받는 두 명의 인물을 서로 나눠가면서 비춰주는 씬이 있다면, 해당 씬에서 유사한 숏들이 아주 많이 생성이 되는 것이죠.</p>
-<p>그래서 유사한 숏들 끼리 그룹화를 시킨 후, 시간 순서상 가장 먼저 나온 숏을 남기고 나머지는 제거를 했다고 합니다.</p>
-<p>유사한 숏들 끼리 그룹화를 할 때에는 이미지를 벡터로 인코딩 시켜 유사도를 비교했다고 합니다.</p>
-</section>
-<section id="compute-representations">
-<h3>3. 표현 계산(Compute representations)<a class="headerlink" href="#compute-representations" title="Permalink to this heading">#</a></h3>
-<p>중복을 제거한 후에 남은 고유 이미지들에 대해서는 해당 이미지들에 대한 표현(representation)을 계산하게 됩니다. 이 과정은 사용자가 원하는 유형의 match cut을 찾기 위한 과정이라고 볼 수 있겠습니다.</p>
-<p>본 글에서는 두 가지 유형의 match cut을 안내하는데, 하나는 frame matching이고, 다른 하나는 action matching입니다.</p>
-<p>Frame matching은 숏에서 나오는 인물들의 구조가 일치하는 경우를 뜻합니다. 아래와 같은 두 숏을 연결하면 frame match cut이라고 볼 수 있습니다.</p>
-<p><img alt="" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*hWO2BXQG0Ei4phbsOZwEuA.png" />
-<img alt="" src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*g4GnvGVXvxrs2w4CQ-E1uA.png" /></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.netflix.com/title/80057281">기묘한 이야기</a>에서 나오는 frame match 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
-</ul>
-<p>Action matching은 사물이나 사람이 연속적으로 이동하는 과정을 match cut으로 편집하여 사용하는 유형입니다. 아래와 같은 예시를 들 수 있겠습니다.</p>
-<p><img alt="" src="https://miro.medium.com/v2/resize:fit:786/format:webp/1*FX3hu9Tm_sb9u6ozkW-YXg.gif" /></p>
-<ul class="simple">
-<li><p><a class="reference external" href="https://www.netflix.com/title/80996532">Resident Evil</a>에서 나오는 action match 예시 (출처: <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Netflix 블로그</a>)</p></li>
-</ul>
-<p>이렇게 원하는 유형의 match cut을 찾기 위해서 이미지를 비교할 수 있도록 특졍 representation으로 변환하는 과정을 진행하게 됩니다.</p>
-</section>
-<section id="compute-pair-scores">
-<h3>4. 점수화(Compute pair scores)<a class="headerlink" href="#compute-pair-scores" title="Permalink to this heading">#</a></h3>
-<p>Representation으로 이미지를 변환하는 과정을 마무리하면, 모든 이미지 쌍들 간의 유사도 점수를 계산합니다. 유사도 점수가 높을 수로 두 개의 숏이 유사하고, 그에 따라 match cut으로 편집이 가능한 숏들이 되겠습니다.</p>
-</section>
-<section id="extract-top-k-pairs">
-<h3>5. 순위 매기기(Extract top-K pairs)<a class="headerlink" href="#extract-top-k-pairs" title="Permalink to this heading">#</a></h3>
-<p>본 과정은 앞서 네번째 단계에서 계산된 점수들을 순위화 하여, 상위 K개만 영상 편집자에게 반환되도록 하는 과정이 되겠습니다.</p>
-</section>
+<section id="fine-tuning">
+<h3>2. fine-tuning용 데이터 준비<a class="headerlink" href="#fine-tuning" title="Permalink to this heading">#</a></h3>
+<p>Spotify가 지닌 팟캐스트 에피소드들에 대해 성능 높은 Natural Language Search용 임베딩 벡터를 생성하게끔 하기 위해, 앞서 선택한 pre-trained 모델을 fine-tuning 해야 했습니다.</p>
+<p>어떻게 fine-tuning용 데이터를 구축했는지도 아주 세밀하게 Spotify 공식 블로그에 소개가 되어 있습니다.</p>
+<p>Spotify에서는 fine-tuning을 위한 학습용 데이터를 3가지 유형으로 구축했고, 이와 별도의 방법으로 검증용 데이터를 구축해서 총 4가지 유형의 데이터를 구축했습니다.</p>
+<p>첫번째롤 학습용 데이터 유형은 다음과 같습니다.</p>
+<ol class="arabic simple">
+<li><p>term matching 기반으로 구현된 검색엔진에서 성공적으로 매칭된 (쿼리, 에피소드) 쌍들</p></li>
+<li><p>term matching 기반으로 구현된 검색엔진에서 첫번째 쿼리 시도는 실패했지만 그 후 몇 번의 다른 쿼리를 입력하여 성공적으로 매칭이 된 경우에 대해, (성공되기 전에 실시한 쿼리, 추후 매칭에 성공된 에피소드) 쌍들</p></li>
+<li><p>유명한 팟캐스트 에피소드에 대해 딥러닝 모델로 생성한 쿼리를 매칭 시켜서 만든 (딥러닝으로 합성된 쿼리, 에피소드) 쌍들</p></li>
+</ol>
+<p>특히나 2번 데이터 유형 같은 경우, 실제 사용자가 입력한 쿼리에 대해 Natural Language Search를 쓰면 반환이 될법한 데이터라고 볼 수 있겠습니다.</p>
+<p>검증용 데이터로는 데이터 라벨러가 직접 큐레이팅한 데이터를 사용했고, Natural Language Search를 사용했을 때 탐지 될만한 의미론적으로 유사한 (쿼리, 에피소드) 쌍들을 구축해서 사용했다고 합니다.</p>
+<p>모델의 일반화를 보다 더 확실하게 검증하기 위해 검증용 데이터에 언급된 팟캐스트 에피소드들은 학습용 데이터에는 없도록 학습용 데이터에 대한 처리를 진행했다고 합니다.</p>
 </section>
 <section id="id6">
-<h2>결과<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
-<p>해당 시스템을 사용하여 어느 정도의 업무 효율을 가져 갔는지에 대한 언급은 없고, 해당 시스템이 얼마나 잘 match cut을 잘 탐지하는지에 대한 성능적인 평가가 마지막에 공유가 되었습니다. 관심 있으신 분께서는 블로그 <a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">원문</a> 또는 <a class="reference external" href="https://arxiv.org/abs/2210.05766">학술 논문</a>을 참고 부탁드립니다.</p>
+<h3>3. 학습<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<p>Spotify팀은 데이터 준비 과정에서 positive 샘플, 즉 의미론적으로 유사한 (쿼리, 에피소드) 쌍을 구축 했습니다. 모델 학습을 할 때는 positive 샘플 뿐만 아니라 어떤 경우에 의미론적으로 유사하지 않도록 임베딩 해야 하는 것을 알려주는 negative 샘플 또한 중요한 데이터입니다. 블로그에서 negative 샘플 구축 과정을 세부적으로 다루고 있는 것을 볼 수 있습니다.</p>
 </section>
 <section id="id7">
-<h2>개인 평가 의견<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
-<p>이번 활용 사례는 머신러닝을 사용하여 기존에 사람이 하던 수동적이고 노동 집약적인 작업을 자동화 하는 과정을 잘 설명한 사례라고 느꼈습니다.</p>
+<h3>4. 평가<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<p>모델 학습 후 평가 단계에서 활용한 지표들에 대해선 <a class="reference external" href="https://engineering.atspotify.com/2022/03/introducing-natural-language-search-for-podcast-episodes/#:~:text=Offline%20evaluation,our%20curated%20dataset.">공식 Spotify 블로그</a>에서 확인 가능합니다.</p>
+</section>
+<section id="id8">
+<h3>5. 프로덕션 환경에 통합<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
+<p>쿼리 벡터 생성을 위한 쿼리용 인코더, 에피소드 벡터 생성을 위한 에피소드용 인코더에 대한 fine-tuning이 완료가 되면, 이제 해당 인코더와 인코더에서 나온 벡터들을 프로덕션 환경에 통합시키는 것이 필요 했습니다.</p>
+<p>Spotify에서는 에피소드 인코더로 생성한 에피소드 벡터들을 <a class="reference external" href="https://vespa.ai/">Vespa</a> 검색 엔진 서비스에 저장을 해서, 추후 쿼리 벡터가 입력되면 Vespa 검색 엔진 서비스에서 제공하는 Approximate Nearest Neighbor Search (ANN Search) 기능을 통해 빠르게 품질 높은 검색 결과물을 찾아서 반환했다고 합니다. ANN 기법은 실제 프로덕션 환경에서 빠르게 쿼리 벡터와 가까운 거리의 아이템 벡터를 찾는 기술입니다.</p>
+<p>쿼리용 인코더는 <a class="reference external" href="https://cloud.google.com/vertex-ai">Google Cloud Vertex AI</a>에 배포해서 쿼리가 입력되면 해당 쿼리에 대해 추론을 실시하도록 구현했다고 합니다.</p>
+<p>가끔씩은 NLS보다 기존 term matching이 더 좋은 결과물을 반환 하기도 하고, NLS만 사용하면 검색 비용이 너무 비싸지기 때문에, 최종적으로는 두 가지를 통합하여 두 개의 검색 엔진으로 부터 반환된 결과물을 reranking하는 모델을 중앙에 넣어서 사용한다고 합니다.</p>
+</section>
+</section>
+<section id="id9">
+<h2>결과<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
+<p>새로운 검색 엔진과 기존 엔진에 대한 A/B 테스트 결과 팟캐스트 관여 (podcast engagement)에 대한 상당한 증가가 있었다고 합니다.</p>
+</section>
+<section id="id10">
+<h2>개인 평가 의견<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
+<p>IT 공부를 할 때나 IT 솔루션 구현 환경 후기에서 많이 보이는 There is no silver bullet 이라는 문구가 여기에서도 어김없이 등장합니다. 검색 엔진 분야에서도 해당 문구가 적용되며, 그래서 결국 term matching과 Natural Language Search 검색 엔진을 함께 최종적으로 프로덕션 환경에서 사용하는 것을 볼 수 있습니다.</p>
+<p>최종적으로 여러 검색 엔진에 쿼리를 보내고, 각각의 후보군들을 통합한 후 reranking 하는 방식으로 프로덕션에 구현한 것으로 보이는데, 이 과정에서 latency 최적화는 추가적으로 필요로 했는지, 필요했다면 어떤식으로 접근했는지 궁금했습니다.</p>
+<p>또한 Spotify R&amp;D 블로그가 기술적으로 되게 상세하게 다루는 점 또한 느낄 수 있었습니다.</p>
+<p>마지막으로 A/B 테스팅에 대한 결과가 단순히 텍스트로 상당히 증가했다 라고 공유하는 것이아닌, 수치적인 지표로 공유해줬다면 더 좋았을 것이라는 생각이 들었습니다. 하지만 이것은 단순 Spotify 뿐만 아니라 다른 기업들의 기술 블로그에서도 A/B 테스트의 결과로 수치적인 지표는 자세하게 공유가 안되는 추세를 확인할 수 있습니다. 아마 실제 내부적으로 현업에서 사용되는 지표다 보니 공개가 제한될 수도 있어 보입니다.</p>
 </section>
 <section id="reference">
 <h2>Reference<a class="headerlink" href="#reference" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Microsoft Copilot</p></li>
-<li><p><a class="reference external" href="https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx">Netflix Annual Reports &amp; Proxies</a></p></li>
-<li><p><a class="reference external" href="https://netflixtechblog.com/new-series-creating-media-with-machine-learning-5067ac110bcd">New Series: Creating Media with Machine Learning</a></p></li>
-<li><p><a class="reference external" href="https://netflixtechblog.com/match-cutting-at-netflix-finding-cuts-with-smooth-visual-transitions-31c3fc14ae59">Match Cutting: Finding Cuts with Smooth Visual Transitions Using Machine Learning</a></p></li>
+<li><p><a class="reference external" href="https://engineering.atspotify.com/2022/03/introducing-natural-language-search-for-podcast-episodes/">Spotify 블로그</a></p></li>
+<li><p><a class="reference external" href="https://investors.spotify.com/financials/default.aspx#annual">Spotify - Financials</a></p></li>
 </ol>
 </section>
 </section>
@@ -536,20 +512,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../education/Digital-textbook.html"
+       href="Netflix-match-cut.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)</p>
+        <p class="prev-next-title">Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</p>
       </div>
     </a>
     <a class="right-next"
-       href="Spotify-semantic-search.html"
+       href="AmazonPrimeVideo-skip-intro.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까?</p>
+        <p class="prev-next-title">Amazon Prime Video에서는 ‘건너뛰기’ 버튼을 삽입할 적절한 위치를 어떻게 찾는걸까?</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -568,22 +544,22 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Netflix 소개</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Spotify 소개</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">회사 소개</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">비지니스 모델</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">풀고자 하는 문제</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">문제 해결을 위한 솔루션</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-segmentation">1. 숏 분할(Shot segmentation)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shot-deduplication">2. 중복 제거(Shot deduplication)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-representations">3. 표현 계산(Compute representations)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compute-pair-scores">4. 점수화(Compute pair scores)</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#extract-top-k-pairs">5. 순위 매기기(Extract top-K pairs)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-trained">1. 프로젝트 시나리오에 적합한 임베딩용 pre-trained 모델 선택하기</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fine-tuning">2. fine-tuning용 데이터 준비</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3. 학습</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4. 평가</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5. 프로덕션 환경에 통합</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">결과</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">개인 평가 의견</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">결과</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">개인 평가 의견</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
 </ul>
   </nav></div>
