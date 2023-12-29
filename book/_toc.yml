@@ -1,12 +1,15 @@
 format: jb-book
 root: intro
 parts: 
-    - caption: 스트리밍 산업
-      chapters: 
-      - file: docs/streaming/Netflix-match-cut
-    - caption: 플랫폼 산업
-      chapters:
-      - file: docs/platform/Uber-eta
     - caption: 교육 산업
       chapters:
       - file: docs/education/Digital-textbook
+    - caption: 스트리밍 산업
+      chapters: 
+      - file: docs/streaming/Netflix-match-cut
+      - file: docs/streaming/Spotify-semantic-search
+      - file: docs/streaming/AmazonPrimeVideo-skip-intro
+    - caption: 플랫폼 산업
+      chapters:
+      - file: docs/platform/Uber-eta
+
