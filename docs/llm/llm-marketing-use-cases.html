@@ -1,0 +1,682 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>마케팅에서의 생성형 AI: 산업 적용 사례, 향후 기회 및 과제 &#8212; PseudoLab Applied AI 스터디</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-H5EKC658P6"></script>
+    <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){ dataLayer.push(arguments); }
+                gtag('js', new Date());
+                gtag('config', 'G-H5EKC658P6');
+            </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/llm/llm-marketing-use-cases';</script>
+    <link rel="shortcut icon" href="../../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)" href="../education/Digital-textbook.html" />
+    <link rel="prev" title="LLM 에 대한 마이크로소프트와 구글의 방향성" href="llm-ms-google.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    AI 활용 사례 모음
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">LLM 이야기</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="llm-ms-google.html">LLM 에 대한 마이크로소프트와 구글의 방향성</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">마케팅에서의 생성형 AI: 산업 적용 사례, 향후 기회 및 과제</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">교육 산업</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../education/Digital-textbook.html">AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">스트리밍 산업</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../streaming/Netflix-match-cut.html">Netflix에서 영상 편집을 위해 머신 러닝을 활용하는 법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../streaming/Spotify-semantic-search.html">Spotify에서는 팟캐스트 검색 엔진에 어떤 인공지능 기술을 적용했을까?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../streaming/AmazonPrimeVideo-skip-intro.html">Amazon Prime Video에서는 ‘건너뛰기’ 버튼을 삽입할 적절한 위치를 어떻게 찾는걸까?</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">플랫폼 산업</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../platform/Uber-eta.html">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform/Grab-marketing.html">Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai/issues/new?title=Issue%20on%20page%20%2Fdocs/llm/llm-marketing-use-cases.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/llm/llm-marketing-use-cases.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>마케팅에서의 생성형 AI: 산업 적용 사례, 향후 기회 및 과제</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1] 생성형 AI 예시와 마케팅 응용 분야</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[2] 마케팅 분야에서의 생성형 AI 사용 현황</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[3] 마케팅에서 생성형 AI 활용 촉진 요인</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[4] 생성형 AI 활용에 대한 도전 장벽</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[5] 결론</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">레퍼런스</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="ai">
+<h1>마케팅에서의 생성형 AI: 산업 적용 사례, 향후 기회 및 과제<a class="headerlink" href="#ai" title="Permalink to this heading">#</a></h1>
+<p>키워드 : Customer engagement, Customer experience, Generative AI, Personalization</p>
+<ul class="simple">
+<li><p>마케팅 분야에서 생성형 AI(Generative AI, GAI)의 사용이 급증하고 있습니다. GAI는 새로운 콘텐츠 생성에 사용되는 AI 시스템을 의미하며, 마케팅에 혁신적인 변화를 가져오고 있기도 합니다. 이러한 AI 도구는 고객 참여를 높이는 고품질 마케팅 자료를 생성하는 데 중요한 역할을 합니다. 2023년 3월 기준, 미국의 73% 조직이 마케팅 활동에 GAI를 포함한 챗봇을 사용하고 있으며, 마케팅 분야의 AI 시장은 2021년 158억 4,000만 달러에서 2028년에는 1,075억 달러로 성장할 것으로 예상됩니다.</p></li>
+</ul>
+<section id="id1">
+<h2>[1] 생성형 AI 예시와 마케팅 응용 분야<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p>마케팅 활동을 지원하기 위해 다양한 생성 인공지능(GAI) 도구들이 개발되었습니다. 이러한 도구들은 마케팅 전문가들에게 중요한 자산이 되고 있습니다. 대표적인 예로, 오픈AI의 ChatGPT는 일반 대중과 마케팅 전문가들 사이에서 인기 있는 GAI 도구로 주목받고 있습니다. 아래 제시된 표는 마케팅 영역에서 GAI에 대한 활용 예시입니다.</p></li>
+<li><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>서비스 명</p></th>
+<th class="head"><p>사용 예시</p></th>
+<th class="head"><p>마케팅 영역</p></th>
+<th class="head"><p>URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OpenAI의 ChatGPT와 GPT-4</p></td>
+<td><p>Tome: AI 기반 스토리텔링 도구 제공, 온라인 문서, 비디오 등을 활용한 프레젠테이션 생성 Khan Academy의 GPT-4 기반 Khanmigo: 학생과 교사를 위한 개인화된 상호작용 학습 경험 제공</p></td>
+<td><p>창의력 촉진, 마케팅 콘텐츠 생성, 개인화된 솔루션 개발</p></td>
+<td><p><a class="reference external" href="https://chat.openai.com/">링크</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>OpenAI의 DALL-E2</p></td>
+<td><p>Mattel: 새로운 Hot Wheels 모델카 개발. Omneky: 소셜 플랫폼 광고용 시각 자료 생성</p></td>
+<td><p>프롬프트 기반 맞춤형 이미지 및 아트 생성</p></td>
+<td><p><a class="reference external" href="https://chat.openai.com/">링크</a></p></td>
+</tr>
+<tr class="row-even"><td><p>Meta의 AI Sandbox</p></td>
+<td><p>PrimeCare: 블로그 포스트용 Midjourney 생성 아트 사용</p></td>
+<td><p>다양한 광고 사본 변형, 텍스트 프롬프트를 통한 배경 생성, 이미지 크롭</p></td>
+<td><p><a class="reference external" href="https://www.facebook.com/business/news/introducing-the-ai-sandbox-for-advertisers-and-expanding-our-meta-advantage-suite">링크</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Midjourney</p></td>
+<td><p>PrimeCare: 블로그 포스트용 생성 아트 사용</p></td>
+<td><p>텍스트 프롬프트 기반 이미지 생성</p></td>
+<td><p><a class="reference external" href="https://www.midjourney.com/">링크</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://Jasper.ai">Jasper.ai</a></p></td>
+<td><p>Goosehead Insurance: 블로그 글, 이메일 캠페인, 소셜 미디어 콘텐츠 등 마케팅 콘텐츠 생성 및 재활용</p></td>
+<td><p>마케팅 콘텐츠 생성 (블로그 글, 제품 설명, 회사 소개, 광고 사본 등)</p></td>
+<td><p><a class="reference external" href="https://www.jasper.ai/">링크</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://Peppertype.ai">Peppertype.ai</a></p></td>
+<td><p>800개 이상의 기업 (Meta, Adobe, Amazon 포함)이 콘텐츠 생성에 사용</p></td>
+<td><p>짧은 형태의 맥락적 사본 및 제품 설명 생성</p></td>
+<td><p><a class="reference external" href="https://www.peppercontent.io/peppertype-ai/">링크</a></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://Copy.ai">Copy.ai</a></p></td>
+<td><p>Airtable: 광고 사본 및 기타 마케팅 콘텐츠 제작</p></td>
+<td><p>광고 사본 및 기타 마케팅 콘텐츠 제작</p></td>
+<td><p><a class="reference external" href="https://www.copy.ai/">링크</a></p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><p>주요 GAI 도구로는 GPT-4, DALL-E 2, Midjourney 등이 있으며, 마케팅 응용을 위해 특별히 조정된 모델 변형들도 개발되었습니다. 예를 들어, <a class="reference external" href="http://Jasper.ai">Jasper.ai</a>, <a class="reference external" href="http://Copy.ai">Copy.ai</a>, <a class="reference external" href="http://Peppertype.ai">Peppertype.ai</a> 등은 마케팅 콘텐츠 생성에 특화된 서비스를 제공합니다. 또한, META와 같은 디지털 광고 대기업들은 고객들에게 다양한 GAI 도구를 제공하고 있습니다. 이러한 도구들은 광고 사본 변형, 배경 생성, 이미지 크롭 등의 기능을 포함합니다. 광고주들은 이를 활용하여 페이스북이나 인스타그램 광고용 다양한 버전의 광고 사본을 생성하거나, 텍스트 프롬프트를 사용해 배경을 생성하고, 소셜 게시물이나 스토리, 짧은 비디오 등에 적합한 다양한 비율의 시각물을 생성할 수 있다. 이러한 도구들은 마케팅 전략의 효율성을 높이고, 창의적인 콘텐츠 제작을 용이하게 할 수 있습니다.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>조사 기관</p></th>
+<th class="head"><p>조사 시기 및 대상</p></th>
+<th class="head"><p>주요 발견</p></th>
+<th class="head"><p>추가 발견</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Salesforce와 YouGov</p></td>
+<td><p>2023년 5월 18일 – 25일, 1029명의 마케터</p></td>
+<td><p>51%가 GAI 사용 중. 추가 22%가 “매우 곧” 도구 사용 계획</p></td>
+<td><p>GAI가 마케터의 주당 업무 시간을 5시간 이상 절약</p></td>
+</tr>
+<tr class="row-odd"><td><p>Boston Consulting Group</p></td>
+<td><p>2023년 4월, 북미, 유럽, 아시아의 8개국에서 여러 부문의 200명 이상의 CMO</p></td>
+<td><p>70%가 GAI 사용 중이고 19%가 테스트 중. 기술 사용 계획이 없는 사람은 3% 뿐</p></td>
+<td><p>상위 3가지 사용 사례: 개인화(67%), 통찰력 생성(51%), 콘텐츠 생성(49%)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="http://Botco.ai">Botco.ai</a></p></td>
+<td><p>2023년 3월, 1000명의 마케팅 전문가</p></td>
+<td><p>73%가 마케팅 콘텐츠 생성을 위해 GAI 도구 사용</p></td>
+<td><p>GAI의 가장 흔한 기대 효과: 성능 향상(58%), 창의적 다양성 증가(50%), 비용 효율성(50%), 빠른 창의적 주기(47%), 학습 및 개선 능력(39%), 인간 창의력 보완(34%)</p></td>
+</tr>
+<tr class="row-odd"><td><p>The Conference Board와 Ragan Communications</p></td>
+<td><p>2023년 8월, 287명의 마케터 및 커뮤니케이터</p></td>
+<td><p>87%의 마케터가 AI 도구 사용/실험</p></td>
+<td><p>주요 응용 분야: 콘텐츠 요약(44%), 창의적 사고 촉진(41%), 고객/사용자 콘텐츠 개인화(33%), 연구(30%), 더 빠른 콘텐츠 생성(30%), 고객 서비스 향상(17%)</p></td>
+</tr>
+<tr class="row-even"><td><p>Sitecore</p></td>
+<td><p>2023년 3월, 미국의 400명 이상의 마케팅 전문가</p></td>
+<td><p>80% 이상이 AI 실험. 78%가 GAI가 “원하는 고객 경험”에 “더 가까워지는” 데 도움이 될 것이라고 믿음 (7%는 더 “멀어질” 수 있다고 우려)</p></td>
+<td><p>고객에게 더 가까워지는 GAI의 메커니즘: 더 개인화된 콘텐츠(75%), 고객 요구에 대한 더 나은 이해(74%), 관련 콘텐츠 스트림 제공(67%) (Bennett, 2023a)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Chief Outsiders</p></td>
+<td><p>2023년, 포춘 500 경험을 가진 80명의 CMO</p></td>
+<td><p>GAI 도구가 가장 가치를 제공할 것으로 예상되는 영역 (8점 만점): 콘텐츠 생성 및 관리(7.37), 시장 조사 및 경쟁 통찰력(6.1), 디지털 마케팅(5.6)</p></td>
+<td><p>고객 경험 개선(5.08), 마케팅 기술 전략, 채택 및 사용(4.41)</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>위 표는 생성 인공지능(GAI)의 마케팅 분야에서의 사용과 관련된 주요 발견들을 강조합니다. 즉, GAI가 마케팅 분야에서 어떻게 활용되고 있는지, 그리고 마케팅 전문가들이 이 기술에서 어떤 이점을 기대하는지를 보여줍니다. GAI는 개인화, 통찰력 생성, 콘텐츠 생성 등 다양한 분야에서 중요한 역할을 하고 있으며, 마케팅 전략과 고객 경험을 개선하는 데 기여하고 있습니다.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>[2] 마케팅 분야에서의 생성형 AI 사용 현황<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<ul>
+<li><p>마케팅에서 GAI의 세 가지 주요 활용 사례는 개인화, 인사이트 생성 그리고 콘텐츠 생성으로 볼 수 있습니다.</p></li>
+<li><img src="https://bcgblog.kr/wp-content/uploads/2023/07/Chart01KR-2-1.jpg" alt="마케팅 업계를 뒤흔드는 ‘생성형 AI’ ― 빠르게 습득하면 기회가 열린다 1" style="zoom:67%;" />
+- **개인화:** 은행과 소매업체들은 GAI를 사용하여 고객 데이터를 분석하고, 이를 바탕으로 맞춤형 투자 조언이나 제품 추천을 제공합니다. 이러한 개인화 노력은 고객 참여도, 전환율 및 충성도를 높이는 데 목적이 있습니다 (Ratajczak et al., 2023).
+- **인사이트 생성**: 마이크로소프트와 세일즈포스와 같은 소프트웨어 벤더들은 GAI 기능을 제품에 통합하여 고객에 대한 깊은 인사이트를 얻습니다. 예를 들어, 마이크로소프트의 Dynamics 365 Customer Insights의 Copilot 기능은 Office 제품에 GPT-4를 추가하여 마케터들이 고객 데이터에서 인사이트를 얻을 수 있도록 합니다 (Reines, 2023). ChatGPT Plus는 고급 데이터 분석을 제공하여 누락된 데이터 문제를 해결하고, 데이터를 분석하며, 시각화를 생성합니다 (Horsey, 2023).
+- **콘텐츠 마케팅**: 콘텐츠 마케팅은 가치 있는, 관련성 있는, 일관된 콘텐츠를 창조하고 배포하여 명확하게 정의된 대상 고객을 끌어들이고 유지하는 전략입니다. GAI는 새로운 아이디어를 창출하고 더 빠르게 작업하여 효과적인 마케팅 콘텐츠를 더 빠르고 저렴한 비용으로 생성하는 데 유용합니다 (The Content Marketing Institute, 2015).
+</li>
+</ul>
+</section>
+<section id="id3">
+<h2>[3] 마케팅에서 생성형 AI 활용 촉진 요인<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>마케팅에서 생성 인공지능(GAI) 활용을 촉진하는 주요 요인들은 다음과 같이 요약할 수 있습니다.
+<img src="https://digitaltransformation.co.kr/wp-content/uploads/2023/09/svgz-rev50-ex1-v5.png" alt="img" style="zoom:70%;" /></p>
+<ul>
+<li><p><strong>사용의 용이성 인식 (Perceived Ease of Use)</strong>: ChatGPT와 같은 인기 있는 GAI 도구들은 사용자 친화적인 인터페이스를 제공하며, 다양한 마케팅 작업을 쉽게 수행할 수 있습니다. 이러한 사용의 용이성은 기술 채택에 있어 중요한 요소로 작용합니다.</p></li>
+<li><p><strong>시험 가능성 (Trialability)</strong>: GAI 도구를 공식적으로 채택하기 전에 실험해 볼 수 있는 능력은 중요한 촉진 요소입니다. ChatGPT와 같은 도구들은 무료 사용 가능성을 제공하여 사용자 기반의 빠른 성장을 촉진할 수 있습니다.</p></li>
+<li><p><strong>비용 효율성 (Cost-Effectiveness)</strong>: 대부분의 GAI 도구들은 비용이 과하지 않으며, 이는 대기업뿐만 아니라 중소기업에게도 저렴한 옵션을 제공합니다.</p></li>
+<li><p><strong>다양한 GAI 도구의 가용성 (Availability of a Wide Variety of Tools)</strong>: 마케팅을 위한 다양한 GAI 도구들이 사용 가능하며, 이들은 다양한 고객 요구를 충족시키기 위해 여러 GAI 제공업체와 협력합니다.</p></li>
+<li><p><strong>AI 모델의 맞춤형 및 세밀한 조정 (Customization and Fine-Tuning of GAI Models)</strong>: 특정 콘텐츠 도메인에 대한 GAI 모델을 맞춤형하거나 세밀하게 조정하는 능력은 중요한 촉진 요소입니다. 이러한 세밀한 조정은 조직의 특정 제품, 서비스, 마케팅 정책에 맞게 GAI 모델을 훈련시키는 데 사용될 수 있습니다.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="id4">
+<h2>[4] 생성형 AI 활용에 대한 도전 장벽<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<img src="https://cdn.newsroad.co.kr/news/photo/202302/22092_32342_1231.jpg" alt="사진/연합뉴스" style="zoom: 67%;" />
+<ul class="simple">
+<li><p>마케팅 분야에서 생성 인공지능(GAI)의 광범위한 사용에 대한 주요 도전과 장벽은 다음과 같습니다.</p>
+<ol class="arabic simple">
+<li><p><strong>비용 문제 (Cost Concerns)</strong>: 특히 중소기업(SMEs)에게 비용은 주요 장벽으로 작용합니다. 예를 들어, Microsoft 365의 Copilot과 같은 일부 GAI 도구에 접근하기 위해서는 추가 비용이 발생하며, GPT-4를 사용하기 위한 ChatGPT Plus의 월 구독료는 20달러입니다. 무료 버전의 ChatGPT는 교육 데이터가 2021년까지만 업데이트되어 있어 실시간 콘텐츠 접근과 인터넷 검색에 제한이 있습니다.</p></li>
+<li><p><strong>데이터 보안 및 개인정보 보호 (Data Security and Privacy)</strong>: 데이터 보안과 개인정보 보호는 GAI 도구 사용과 관련하여 큰 우려 사항입니다. 민감한 고객 데이터를 이러한 도구에 입력하는 것과 이 도구들이 소비자의 온라인 상호작용에서 데이터를 수집 및 저장하는 잠재적 위험이 있습니다. ChatGPT Enterprise와 같은 새로운 제품은 프롬프트를 통한 기밀 데이터 노출을 방지하기 위한 보호 기능을 제공합니다.</p></li>
+<li><p><strong>신뢰 문제 및 조직 문화적 적합성 (Trust Issues and Cultural Fit)</strong>: 조직이 데이터 보호 조치를 어떻게 다루는지에 대한 신뢰 문제가 있으며, 이는 민감한 데이터를 보호하지 못하는 회사와의 거래 의사를 줄이는 소비자 신뢰에 영향을 미칠 수 있습니다. 또한, 기존 구조와 워크플로우 내에서 GAI를 통합하는 방법에 대한 우려가 있으며, 조직 문화에 대한 GAI의 영향에 대해 혼합된 기대가 존재합니다.</p></li>
+<li><p><strong>인식된 위험과 학습 곡선 (Perceived Risks and Learning Curve)</strong>: GAI를 사용하여 마케팅 작업을 수행하는 새로운 방법으로 전환하는 데 따른 인식된 위험과 비용은 기업과 직원들 사이에서 사용을 꺼리게 할 수 있습니다. GAI를 효과적으로 사용하는 방법을 배우는 것은 즉각적인 비용, 시간, 좌절감 및 기술 미숙으로 인한 실수를 수정하는 비용을 포함할 수 있습니다.</p></li>
+<li><p><strong>잠재적인 일자리 손실 (Potential Job Losses)</strong>: 조직 내에서 GAI 사용이 일자리 손실을 초래할 수 있습니다. 예를 들어, 2023년 5월에만 GAI 사용으로 인해 약 4,000개의 일자리가 감소했습니다. 설문조사에 따르면, 응답자 중 단 4%만이 GAI 사용이 마케팅 일자리 증가로 이어질 것으로 예상했으며, 40%는 이러한 일자리가 감소할 것으로 예상했습니다.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="id5">
+<h2>[5] 결론<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>생성 인공지능(GAI)은 현재 마케팅 분야에서 중요한 혁신을 이끌고 있으며, 특히 세 가지 주요 응용 분야에서 그 영향력이 두드러집니다. 개인화, 인사이트 생성, 콘텐츠 창작 분야들은 서로 밀접하게 연결되어 있으며, 각각의 영역에서 GAI의 활용은 마케팅 전략의 효과를 극대화하는 데 기여할 수 있습니다.</p></li>
+<li><p>GAI의 이러한 응용은 비용 절감, 효율성 향상, 리드 생성 프로세스 개선 등 마케팅의 다양한 측면에서 긍정적인 영향을 미칠 것으로 보입니다. 그러나 이러한 도구의 다양성과 능력을 효과적으로 이해하고 활용하는 것은 여전히 채택의 주요 도전 과제로 남아 있습니다. 이는 기업이 GAI를 효과적으로 통합하고 최대한 활용하기 위해 필요한 지식과 기술을 개발하는 데 중점을 두어야 함을 의미합니다.</p></li>
+<li><p>또한 ChatGPT와 같은 생성 AI 기술의 등장은 플랫폼, 제조 및 유통 등 다양한 산업 분야에 걸쳐 상당한 영향을 미칠 것으로 예상됩니다. ChatGPT는 기존 AI 기술에 대한 접근 장벽을 낮춤으로써 특히 ‘공급업체’의 핵심인 생산성과 창의성을 향상시킬 수 있습니다. 하지만, 이들 산업의 ‘수요자’인 소비재 부문에서는 이러한 어떻게 변화할 지 궁금합니다.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>레퍼런스<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S026840122300097X">https://www.sciencedirect.com/science/article/abs/pii/S026840122300097X</a></p></li>
+<li><p><a class="reference external" href="https://bcgblog.kr/generative-ai-in-marketing/">https://bcgblog.kr/generative-ai-in-marketing/</a> 이미지 # 1</p></li>
+<li><p><a class="reference external" href="https://digitaltransformation.co.kr/%EC%83%9D%EC%84%B1%ED%98%95-ai%EB%A5%BC-%EA%B8%B0%EB%B0%98%ED%95%9C-%EB%A7%88%EC%BC%80%ED%8C%85-%EB%B0%8F-%EC%98%81%EC%97%85-%ED%99%9C%EC%9A%A9-%EB%B0%A9%EC%95%88/">https://digitaltransformation.co.kr/생성형-ai를-기반한-마케팅-및-영업-활용-방안/</a> 이미지 # 2</p></li>
+<li><p><a class="reference external" href="https://www.newsroad.co.kr/news/articleView.html?idxno=22092">https://www.newsroad.co.kr/news/articleView.html?idxno=22092</a> 이미지 # 3</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs\llm"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="llm-ms-google.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">LLM 에 대한 마이크로소프트와 구글의 방향성</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../education/Digital-textbook.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">AI 디지털 교과서가 학습에 도움이 될까? (feat. 교육청의 AI 교과서란 무엇인가?)</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1] 생성형 AI 예시와 마케팅 응용 분야</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[2] 마케팅 분야에서의 생성형 AI 사용 현황</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[3] 마케팅에서 생성형 AI 활용 촉진 요인</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[4] 생성형 AI 활용에 대한 도전 장벽</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[5] 결론</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">레퍼런스</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

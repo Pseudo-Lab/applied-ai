@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법 &#8212; PseudoLab Applied AI 스터디</title>
+    <title>Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법 &#8212; PseudoLab Applied AI 스터디</title>
   
   
   
@@ -69,12 +69,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/platform/Uber-eta';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/platform/Grab-marketing';</script>
     <link rel="shortcut icon" href="../../_static/PseudoLab_logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법" href="Grab-marketing.html" />
-    <link rel="prev" title="Amazon Prime Video에서는 ‘건너뛰기’ 버튼을 삽입할 적절한 위치를 어떻게 찾는걸까?" href="../streaming/AmazonPrimeVideo-skip-intro.html" />
+    <link rel="prev" title="우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법" href="Uber-eta.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -182,8 +181,8 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">플랫폼 산업</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Grab-marketing.html">Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Uber-eta.html">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법</a></li>
 </ul>
 
     </div>
@@ -255,7 +254,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/Pseudo-Lab/applied-ai/issues/new?title=Issue%20on%20page%20%2Fdocs/platform/Uber-eta.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/Pseudo-Lab/applied-ai/issues/new?title=Issue%20on%20page%20%2Fdocs/platform/Grab-marketing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +284,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/docs/platform/Uber-eta.md" target="_blank"
+      <li><a href="../../_sources/docs/platform/Grab-marketing.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -367,7 +366,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</h1>
+    <h1>Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -377,12 +376,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1] 회사 소개 및 시장 규모: 우버(Uber)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[2] 비즈니스 모델</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[3] 풀고자 하는 문제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepeta-estimating-travel-time">[4] 문제 해결: DeepETA(Estimating Travel Time) 방안</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[5] 결과</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[6] 개인 평가 의견</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grab"><strong>회사 소개 및 시장 규모 - Grab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">풀고자 하는 문제(Motivation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">문제 정의(Problem Statement)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-bullseye">해결 방안: AI 기반 프로모션 할당 시스템(Bullseye)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">모델 구조와 실행 방안</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">결론</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">레퍼런스</a></li>
 </ul>
             </nav>
         </div>
@@ -394,74 +394,91 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="uber">
-<h1>우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법<a class="headerlink" href="#uber" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="grab-ai">
+<h1>Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법<a class="headerlink" href="#grab-ai" title="Permalink to this heading">#</a></h1>
+<p>오늘은 플랫폼 기반 비즈니스 전략을 강화하고 지속 가능한 고객 여정을 관리하는 데 있어 인공 지능(AI)의 혁신적인 역할에 대해 살펴보겠습니다. 사례로는 차량 공유 및 배달 서비스 부문의 선두주자인 그랩(Grab)에 있습니다. 지난 우버(Uber)가 자동차 공유 서비스에 AI를 활용한 것과 유사하게 Grab이 어떻게 AI를 활용하여 자사 플랫폼에서 판매자를 위한 마케팅 접근 방식을 혁신하는지 살펴보겠습니다.</p>
+<img src="https://www.2e.co.kr/news/photo/201701/img_162163_1.png" alt="내부기고_플랫폼_(2).png" style="zoom: 25%;" />
+<p>그림 1 플랫폼 비즈니스의 일반적인 구조 (출처: <a class="reference external" href="http://www.applicoinc.com/">www.applicoinc.com</a>)</p>
+<p>구체적으로, 이번 포스팅은 <strong>공급(판매자)과 수요자(고객)가 양면적으로 존재하는 플랫폼 비즈니스인 Grab이 AI를 어떻게 활용하여 지능적이고 타겟이 명확한 프로모션 캠페인</strong>을 만들고, 이를 통해 판매자의 고객 참여와 비즈니스 성장 환경을 재편하는 혁신적인 방법을 조사할 예정입니다.</p>
+<section id="grab">
+<h2><strong>회사 소개 및 시장 규모 - Grab</strong><a class="headerlink" href="#grab" title="Permalink to this heading">#</a></h2>
+<p>2012년에 설립된 Grab은 싱가포르에 본사를 둔 기술 회사로 동남아시아 전역에 빠르게 입지를 확장했습니다. 원래 차량 공유 서비스로 시작한 그랩은 음식 배달, 디지털 결제, 금융 서비스 등 다양한 분야로 사업을 다각화했습니다. 2023년 4월 마지막 업데이트 기준으로 Grab은 해당 지역 8개국 400개 이상의 도시에서 운영되고 있으며 동남아시아 앱 기반 서비스 시장에서 가장 큰 기업 중 하나입니다.</p>
+<p>시장 규모와 재무 성과 측면에서 그랩은 눈에 띄는 성장을 보여왔습니다. 구체적인 판매 수치는 2023년 이후 변화했을 수 있지만 Grab은 <strong>핵심 차량 공유 서비스뿐만 아니라 빠르게 성장하는 음식 배달 및 디지털 결제 부문에서도 지속적으로 수익원을 확장</strong>해 왔습니다. 이러한 다각화를 통해 Grab은 스마트폰 보급률이 증가하고 기술에 익숙한 젊은 인구가 앱 기반 서비스에 대한 수요를 촉진하는 동남아시아의 급성장하는 디지털 경제에 진출할 수 있었습니다.</p>
+</section>
+<section id="motivation">
+<h2>풀고자 하는 문제(Motivation)<a class="headerlink" href="#motivation" title="Permalink to this heading">#</a></h2>
+<p><img alt="img" src="https://engineering.grab.com/img/scaling-marketing-for-merchants/customer-feedback.png" /></p>
+<p>그림 2 마케팅 영역에서 공급자의 피드백 (그랩 블로그)</p>
 <ul class="simple">
-<li><p>오늘 소개할 주제는 승차 공유 서비스(Car Sharing Service)에서 대표적인 우버(Uber) 플랫폼에서 딥러닝이 어떻게 적용하는 지에 대해 알아볼 예정입니다. 구체적으로, 우버는 고객이 서비스 예약을 시작하면, 차량이 도착하는 시간을 전달하는데요, 여기서 나타나는 이슈에 대해 어떻게 관리하여 해결하는 지 알아보도록 하겟습니다.</p></li>
+<li><p><strong>프로모션 캠페인</strong>: 그랩의 비즈니스 AI의 활용은 마케팅에서 프로모션 캠페인의 중요성을 강조하는 것으로 시작됩니다. 이러한 캠페인은 판매, 고객 참여 또는 브랜드 인지도를 높이기 위해 고안되었으며, 판매자의 캠페인 기간 동안 특정 예산 내에서 주문과 매출을 늘리는 것이 목표입니다.</p></li>
+<li><p><strong>판매자 목표</strong>: 이러한 배경에서 판매자(가맹점)는 비즈니스 목표를 달성하기 위해 간단하고 비용 효율적인 방법을 추구합니다. 또한, 그들은 올바른 고객을 대상으로 하는 잘 설계된 마케팅 제안을 원하는데요. 정리하자면, Grab의 역할은 효율적인 캠페인 설정을 촉진하고 판매자가 이러한 목표를 달성하도록 돕는 것입니다.</p></li>
 </ul>
+</section>
+<section id="problem-statement">
+<h2>문제 정의(Problem Statement)<a class="headerlink" href="#problem-statement" title="Permalink to this heading">#</a></h2>
+<p><img alt="img" src="https://engineering.grab.com/img/scaling-marketing-for-merchants/ai-campaign-graph.png" /></p>
+<p>그림 3 AI 기반 프로모션 캠페인에 대한 판매 기대치를 보여주는 그래프 (그랩 블로그)</p>
+<p>Grab이 비즈니스 영역에서 정의한 기존 마케팅 방식의 한계 3가지를 아래와 같이 정리해봤습니다.</p>
+<ul class="simple">
+<li><p><strong>타겟팅이 없는 글로벌 프로모션</strong>: 처음에 Grab의 프로모션 캠페인은 모든 고객을 대상으로 하여 사용 한도에 도달할 때까지 누구나 쿠폰을 사용할 수 있도록 했습니다. 해당 접근 방식은 비효율적이어서 특정 비즈니스 목표를 달성하지 못하거나 프로모션 지출을 최적화하지 못했다는 한계가 있습니다.</p></li>
+<li><p><strong>맞춤형 프로모션 부족</strong>: 판매자는 고유한 소비자 동향에 따라 맞춤형 프로모션을 제공할 수 있는 기능이 필요했습니다. 이러한 새로운 접근 방식 없이는 효과적으로 이익을 늘릴 수 없었습니다.</p></li>
+<li><p><strong>AI 기반 최적화의 부재</strong>: AI 모델을 구현하기 전에는 판매자가 대규모로 적절한 프로모션을 할당하고 비즈니스 목표를 최적화하는 것이 어려웠습니다.</p></li>
+</ul>
+</section>
+<section id="ai-bullseye">
+<h2>해결 방안: AI 기반 프로모션 할당 시스템(Bullseye)<a class="headerlink" href="#ai-bullseye" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>만약 AI 기반 프로모션 캠페인은 휴리스틱 캠페인보다 더 많은 프로모션 비용으로 더 높은 매출을 가져올 것으로 예상할 수 있습니다. 따라서 Grab에서는 판매자가 적절한 프로모션으로 소비자를 지능적으로 타겟팅하는 동시에 판매 및 프로모션 지출을 최적화하는 데 도움이 되는 자동화된 AI 기반 도구를 도입하기 위해 Bullseye를 제안했습니다.</p></li>
+<li><p>Bullseye는 다음 기능을 활용하는 자동화된 AI 기반 프로모션 할당 시스템이며, 크게 4가지로 구성됩니다.</p>
+<ul>
+<li><p><strong>자동화된 사용자 세분화</strong>: 해당 기능을 사용하면 판매자는 신규 사용자, 이탈 사용자 또는 활성 사용자와 같은 특정 사용자 그룹을 타겟팅할 수 있습니다.</p></li>
+<li><p><strong>자동 프로모션 디자인</strong>: Bullseye는 각 판매자 또는 판매자 그룹의 비즈니스 목표에 맞춰 프로모션을 맞춤화할 수 있는 프레임워크를 제공합니다.</p></li>
+<li><p><strong>최적의 프로모션 할당</strong>: 이는 사용 가능한 프로모션 배열과 판매자의 목표를 기반으로 각 사용자에게 가장 적합한 프로모션을 할당합니다.</p></li>
+<li><p><strong>다양한 목표에 대한 유연성</strong>: Bullseye는 개별 판매자 또는 그룹을 위한 캠페인을 타겟팅하고 최적화하여 판매 증대 또는 프로모션 비용 절감과 같은 다양한 목표에 부응할 수 있습니다.</p></li>
+</ul>
+</li>
+</ul>
+</section>
 <section id="id1">
-<h2>[1] 회사 소개 및 시장 규모: 우버(Uber)<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>모델 구조와 실행 방안<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>AI 프로모션 마케팅을 위해 대규모 데이터를 처리하는 방법과 AI 모델 실행을 위한 핵심 요소는 크게 아래와 같이 정리했습니다.</p>
+<p><img alt="img" src="https://engineering.grab.com/img/scaling-marketing-for-merchants/architecture.png" /></p>
 <ul class="simple">
-<li><p>우버(Uber)는 2009년에 설립된 미국의 기술 회사로, 승차 공유 서비스로 시작하여 전세계 수많은 도시에서 운영되고 있습니다. 우버는 스마트폰 앱을 통해 사용자들이 차량을 호출하고, 운전자와 승객을 연결해주는 플랫폼을 제공합니다. 이처럼 우버는 전통적인 택시 서비스와는 다르게 개인 운전자들이 자신의 차량을 사용하여 승객을 운송합니다. 사용자는 우버 앱을 통해 차량을 호출하고, 결제도 앱 내에서 이루어집니다. 이처럼 우버는 교통 수단이 필요한 고객에게 운전자를, 고객이 필요한 운전자에겐 고객을 매칭해주는 플랫폼 비즈니스입니다.</p></li>
-<li><p>우버는 전세계 70개국 1만500개 도시에서 사업을 영위하고 있습니다. 월간 활성 플랫폼 소비자는 1억3100만명에 달하고, 월간 활성 드라이버 수는 540만명에 달하고 있습니다. 우버는 승차 공유 서비스뿐 아니라 음식 딜리버리, 화물운송 등 다양한 서비스를 제공합니다. 매출비중은 작년 4분기 기준 모빌리티부문(승차 공유) 48%, 배달부문 34%, 화물운송부문 18% 등 기록했습니다. 배달부문은 도어대시에 이어 미국 내 점유율 2위를 차지하고 있으며, 코로나19 팬데믹 당시 배달부문 매출이 급증하며 실적을 방어했습니다. 지난해부터 모빌리티 부문이 빠르게 개선되면서 매출 성장을 이끌고 있는 우버입니다. (ref: <a class="reference external" href="https://marketin.edaily.co.kr/News/ReadE?newsId=02824086635577432">https://marketin.edaily.co.kr/News/ReadE?newsId=02824086635577432</a>)</p></li>
+<li><p><strong>사용자 인터페이스 및 백엔드 서비스</strong>: Bullseye의 아키텍처에는 판매자 정보를 입력하기 위한 사용자 인터페이스와 AI 모델을 사용하여 대규모 데이터를 처리하는 백엔드 서비스가 포함되어 있습니다. 이러한 시스템은 대규모 고객 집단을 처리하고 S3에 데이터를 저장하며 API 서비스를 사용하여 프로모션 할당 생성을 위한 예측 모델을 실행하는 구조입니다.</p></li>
 </ul>
+<p><img alt="img" src="https://engineering.grab.com/img/scaling-marketing-for-merchants/implementation.png" /></p>
+<ul class="simple">
+<li><p><strong>세그먼트 식별</strong>: 해당 구성 요소는 과거 주문을 기반으로 사용자를 식별하여 활성 및 이탈 또는 신규 고객으로 분류합니다.</p></li>
+<li><p><strong>프로모션 디자이너</strong>: 각 캠페인의 프로모션 변형을 적응적으로 디자인하는 프레임워크입니다.</p></li>
+<li><p><strong>캠페인 영향 시뮬레이터</strong>: 사용자 및 판매자 프로필과 제안 기능을 기반으로 수익, 매출, 비용과 같은 비즈니스 지표를 예측합니다.</p></li>
+<li><p><strong>최적의 프로모션 선택</strong>: 예상되는 영향과 캠페인 목표를 기반으로 최상의 제안을 선택합니다.</p></li>
+</ul>
+<p><img alt="img" src="https://engineering.grab.com/img/scaling-marketing-for-merchants/promo-designer.png" /></p>
+<ul class="simple">
+<li><p><strong>고객 반응 모델</strong>: 다양한 사용자 및 제안 속성을 고려하여 특정 프로모션에 대한 고객 반응을 예측합니다.</p></li>
+</ul>
+<p><img alt="img" src="https://engineering.grab.com/img/scaling-marketing-for-merchants/customer-response-model.png" /></p>
+<ul class="simple">
+<li><p><strong>하이퍼 매개변수 선택</strong>: 다양한 비즈니스 목표에 맞게 최적화하여 AI 모델이 진화하는 비즈니스 목표와 지역 환경에 적응할 수 있도록 합니다.</p></li>
+</ul>
+<p><img alt="img" src="https://engineering.grab.com/img/scaling-marketing-for-merchants/hpt.png" /></p>
+<p>&lt;AI 기반 최적의 프로모션 마케팅 시뮬레이션, Grab&gt;</p>
 </section>
 <section id="id2">
-<h2>[2] 비즈니스 모델<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>결론<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>AI 기반 마케팅 솔루션인 Bullseye는 Grab의 프로모션 지출을 줄이고 예산 수익을 극대화하는 데 효율성을 보여주었습니다. 요약하자면 아래 2가지로 정리할 수 있겠습니다.</p>
 <ul class="simple">
-<li><p>우버는 승차 공유 서비스를 중심으로 시작했으며, 이후 전세계 수많은 도시와 국가에서 서비스를 제공하면서 규모와 영향력은 계속해서 성장하고 있습니다. 이러한 배경에서 우버는 승차 공유 서비스 외에도 음식 배달 서비스인 ‘Uber Eats’, 화물 운송 서비스인 ‘Uber Freight’ 등 다양한 서비스를 확대하고 있습니다.</p></li>
-<li><p>우버의 주된 수입은 전형적인 플랫폼 비즈니스로, 수수료, 광고, 사업 확장 등을 생각해볼 수 있습니다. 2022년 말까지 우버는 313억 8000만 달러 매출액을 달성했으나, 18억 달러에 영업손실을 기록했습니다. 이만큼 우버는 다양한 서비스를 제공하면서, 기존의 서비스를 최적화하기 위해 많은 노력을 하고 있습니다.</p></li>
+<li><p><strong>판매 증가 및 프로모션 지출 감소</strong>: Bullseye는 음식 캠페인에서 판매 증가와 보다 효율적인 프로모션 지출로 이어졌습니다.</p></li>
+<li><p><strong>최적화된 예산 활용</strong>: 시스템이 프로모션 사용 횟수를 개선하고 예산 사용을 최적화했습니다.</p></li>
 </ul>
+<p>향후 개선 사항에는 더욱 지능적인 서비스와 광범위한 AI 기술 도입을 고려할 수 있습니다. 또한, 비즈니스 맥락에서 특정 전략이나 변화의 영향을 평가하기 위해 A/B 테스트 또는 현장 실험과 같은 정밀한 실험 방법론을 사용하는 것이 중요할 것 같습니다.</p>
+<p>이러한 접근 방식은 기술 변화가 비용 절감 및 이익 증가 측면에서 주요 비즈니스 지표에 어떤 영향을 미치는지 정량적으로 평가할 수 있습니다. 엄격한 실험 방법을 사용함으로써 기업은 전략의 효과를 더 명확하게 이해할 수 있으며, 이를 통해 더 많은 정보를 바탕으로 의사 결정을 내리고 잠재적으로 더 성공적인 결과를 얻을 수 있습니다. 이러한 측면에 초점을 맞춤으로써 접근 방식은 비즈니스 성과를 향상시키는 체계적이고 데이터 중심적인 방법이 되어 보다 효과적인 전략과 잠재적으로 더 높은 수익성으로 이어질 수 있을 것입니다.</p>
 </section>
+<hr class="docutils" />
 <section id="id3">
-<h2>[3] 풀고자 하는 문제<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>우버는 혁신적인 비즈니스 모델과 기술을 통해 전통적인 교통 및 운송 산업에 큰 성장과 변화를 가져왔지만, 다양한 도전과 기술적인 문제에 직면하기도 했습니다. 핵심적으로, 우버는 기존 플랫폼 내 가지고 있는 기술에 대한 최적화에 대한 고민이 필요한데요, 즉 고객의 경험에 대한 최적화가 적절히 수행되지 않으면 고객의 만족도의 영향을 미칠 수 있습니다. 이러한 관리가 적절히 수행되지 않으면 고객 이탈과 같은 비용과 손실이 발생할 수 있습니다. 따라서, 차량 매칭 서비스에서 고객에게 가장 중요한 “도착 시간”을 어떻게 정확성을 해결하는 지에 대해 알아보도록 하겠습니다.</p></li>
-</ul>
-</section>
-<section id="deepeta-estimating-travel-time">
-<h2>[4] 문제 해결: DeepETA(Estimating Travel Time) 방안<a class="headerlink" href="#deepeta-estimating-travel-time" title="Permalink to this heading">#</a></h2>
-<ul>
-<li><p>Uber는 정확한 도착 시간 예측(Estimating Travel Time, ETA)을 통해 뛰어난 고객 경험을 제공하려고 노력하고 있습니다. 이를 위해 우버는 도로 네트워크를 그래프로 나타내어 최단 경로 알고리즘을 사용해 도착 예정 시간을 계산했으나, 도로의 실제 상태를 완벽하게 반영하지 못했다는 한계가 있습니다.</p>
-<p><img alt="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2022/08/figure1-1.png" src="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2022/08/figure1-1.png" /></p>
-<ul class="simple">
-<li><p>캡션</p></li>
-</ul>
-</li>
-<li><p>우버의 도착 시간을 통해 요금 계산, 픽업 시간 예측, 라이더-드라이버간 매칭, 배달시간 계획 등에 사용하기에 이를 활용하는 것은 중요한 일입니다. 따라서 이러한 한계를 개선하기 위해 도로 그래프와 실시간 지리 데이터를 결합하고, 지연(Latency), 정확도(Accuracy), 일반화(Generality)를 개선하기 위해 딥러닝 모델을 활용했습니다.</p>
-<p><img alt="그림 0 내용 (우버 블로그)" src="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2022/08/figure2-3.png" /></p>
-<ul class="simple">
-<li><p>그림 0 내용 (우버 블로그)</p></li>
-</ul>
-</li>
-<li><p>우버는 총 7가지의 신경망 아키텍쳐를 테스트 했습니다. 그 중 self-attention을 갖춘 인코더-디코더 아키텍처가 최고의 정확도를 보였습니다. 또한, 모든 입력을 모델에 분리하고 삽입하면 정확도가 상당히 향상될 수 있다는 것을 발견했습니다. Self-attention은 각 기능 간의 쌍별 상호 작용을 찾아내어 각 기능의 표현을 모든 기능의 가중 합계로 출력합니다. 이를 통해 모든 시간적, 공간적 특징을 현재 처리 중인 하나의 특징으로 집중할 수 있습니다 (아래 설명).</p>
-<p><img alt="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2022/08/figure3-4.png" src="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2022/08/figure3-4.png" /></p>
-<ul class="simple">
-<li><p>캡션</p></li>
-</ul>
-</li>
-<li><p>하지만, self-attention을 갖춘 딥러닝 아키텍쳐는 정확도가 높지만 실제 운용할 수 있는 속도가 느리다는 한계를 가지고 있습니다. 우버는 Linear Transformer를 사용하여 이 복잡도를 줄이고 처리 속도를 높였습니다. 이를 통해 우버는 Transformer 기반 인코더의 높은 정확도와 빠른 지연 시간을 결합하여 실시간 서비스에 적합하게 만드는 방법을 적용했습니다.</p>
-<p><img alt="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2022/08/figure6.png" src="https://blog.uber-cdn.com/cdn-cgi/image/width=2160,quality=80,onerror=redirect,format=auto/wp-content/uploads/2022/08/figure6.png" /></p>
-<ul class="simple">
-<li><p>캡션</p></li>
-</ul>
-</li>
-<li><p>추가적으로, 우버는 전 세계 모든 사업 부문에 서비스를 제공하는 일반 ETA 모델을 목표로 하고 있습니다. 이를 달성하기 위해 Bias Adjustment Decoder와 Asymmetric Huber Loss을 사용했습니다. 먼저, Bias Adjustment Decoder를 통해 다양한 여행 유형과 지역에 대한 예측을 최적화하고, Asymmetric Huber Loss을 사용하여 다양한 비즈니스 사용 사례와 이상치 비율을 수용합니다. 이러한 기술은 모델을 전 세계 Uber의 모든 사업 부문에 적용할 수 있도록 일반화하는 데 중요합니다.</p></li>
-</ul>
-</section>
-<section id="id4">
-<h2>[5] 결과<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>우버는 딥러닝 기반의 ETA(Estimating Travel Time) 모델을 통해 도착 시간 예측의 정확도를 크게 향상시켰습니다. 특히, self-attention 기반의 인코더-디코더 아키텍처와 Linear Transformer를 활용하여 높은 정확도와 실시간 서비스에 적합한 빠른 처리 속도를 동시에 달성했습니다. 이러한 기술적 발전은 고객 경험을 향상시키며, 우버의 전세계 사업 부문에 일반화된 서비스 제공을 가능하게 하여 비즈니스 성장에 크게 기여할 것으로 예상됩니다.</p></li>
-</ul>
-</section>
-<section id="id5">
-<h2>[6] 개인 평가 의견<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>비즈니스 관점에서 AI(특히 딥러닝)의 적절한 역할은 매우 중요하다고 생각합니다. 먼저, 플랫폼 비즈니스에서 기업들은 지속적인 혁신을 통해 경쟁력을 유지하고 확장해야 합니다. AI를 비롯한 기술은 혁신을 가능하게 하는 주요 방법 중 하나이며, 데이터 기반의 의사결정, 자동화, 최적화 등을 통해 기업은 더 효율적이고 정확한 서비스를 제공할 수 있습니다.</p></li>
-<li><p>우버는 딥러닝 기술을 통해 많은 프로세스를 효율화하고 최적화하는 방안을 제시했습니다. 이는 인건비 절감, 작업 시간 단축, 오류 감소 등의 혜택을 기대할 수 있습니다. 또한, 전통적인 비즈니스 모델을 재정의하고 새로운 기회를 창출할 수 있습니다. 이처럼 우버는 효율적인 서비스 제공을 통해 고객 경험을 향상시킬 수 있으며, 이는 고객 만족도를 높이고, 장기적으로는 고객 충성도와 재방문 및 구매 비율을 증가시킬 수 있습니다.</p></li>
-</ul>
-<p>[REF]: [기술 분석] DeepETA: How Uber Predicts Arrival Times Using Deep Learning (<a class="reference external" href="https://www.uber.com/en-KR/blog/deepeta-how-uber-predicts-arrival-times/?uclick_id=793194e3-058c-41bf-add5-f3d0e481e6ae">https://www.uber.com/en-KR/blog/deepeta-how-uber-predicts-arrival-times/?uclick_id=793194e3-058c-41bf-add5-f3d0e481e6ae</a>)</p>
+<h2>레퍼런스<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p><a class="reference external" href="https://engineering.grab.com/scaling-marketing-for-merchants">https://engineering.grab.com/scaling-marketing-for-merchants</a></p>
+<p><a class="reference external" href="https://www.2e.co.kr/news/articleView.html?idxno=162163">https://www.2e.co.kr/news/articleView.html?idxno=162163</a></p>
 </section>
 </section>
 
@@ -494,22 +511,13 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../streaming/AmazonPrimeVideo-skip-intro.html"
+       href="Uber-eta.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Amazon Prime Video에서는 ‘건너뛰기’ 버튼을 삽입할 적절한 위치를 어떻게 찾는걸까?</p>
+        <p class="prev-next-title">우버(Uber)가 딥러닝을 활용한 도착 시간 예측하는 방법</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Grab-marketing.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Grab이 AI 기반 프로모션을 통해 판매자를 위한 마케팅을 확장하는 방법</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -526,12 +534,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">[1] 회사 소개 및 시장 규모: 우버(Uber)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">[2] 비즈니스 모델</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">[3] 풀고자 하는 문제</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deepeta-estimating-travel-time">[4] 문제 해결: DeepETA(Estimating Travel Time) 방안</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">[5] 결과</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">[6] 개인 평가 의견</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#grab"><strong>회사 소개 및 시장 규모 - Grab</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivation">풀고자 하는 문제(Motivation)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#problem-statement">문제 정의(Problem Statement)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ai-bullseye">해결 방안: AI 기반 프로모션 할당 시스템(Bullseye)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">모델 구조와 실행 방안</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">결론</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">레퍼런스</a></li>
 </ul>
   </nav></div>
 
