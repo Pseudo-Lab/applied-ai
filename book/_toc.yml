@@ -1,6 +1,10 @@
 format: jb-book
 root: intro
 parts: 
+    - caption: LLM 이야기
+      chapters:
+      - file: docs/llm/llm-ms-google
+      - file: docs/llm/llm-marketing-use-cases
     - caption: 교육 산업
       chapters:
       - file: docs/education/Digital-textbook
@@ -12,4 +16,5 @@ parts:
     - caption: 플랫폼 산업
       chapters:
       - file: docs/platform/Uber-eta
+      - file: docs/platform/Grab-marketing
 
